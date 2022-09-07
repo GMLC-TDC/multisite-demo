@@ -1,0 +1,122 @@
+{
+    "name": "transmission",
+    "core_type": "zmq",
+    "log_level": "warning",
+    "period": 1,
+    "uninterruptible": false,
+    "terminate_on_error": true,
+    "strict_input_type_checking": true,
+    "publications": [
+        {
+            "key": "node.2.requested",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "node.3.requested",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "pcc.2.pnv",
+            "type": "complex",
+            "unit": "V"
+        },
+        {
+            "key": "node.6.requested",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "node.8.requested",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "pcc.9.pnv",
+            "type": "complex",
+            "unit": "V"
+        },
+        {
+            "key": "pcc.13.pnv",
+            "type": "complex",
+            "unit": "V"
+        },
+        {
+            "key": "pcc.13.lmp",
+            "type": "double",
+            "unit": "$/MWh"
+        },
+        {
+            "key": "pcc.14.pnv",
+            "type": "complex",
+            "unit": "V"
+        },
+        {
+            "key": "pcc.11.pnv",
+            "type": "complex",
+            "unit": "V"
+        },
+        {
+            "key": "pcc.12.pnv",
+            "type": "complex",
+            "unit": "V"
+        }
+    ],
+    "subscriptions": [
+        {
+            "key": "ng2/node.2.avail",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "ng2/node.3.avail",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "distribution1/pcc.2.pq",
+            "type": "complex",
+            "unit": "MVA"
+        },
+        {
+            "key": "ng1/node.6.avail",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "ng1/node.8.avail",
+            "type": "double",
+            "unit": "MMBtu"
+        },
+        {
+            "key": "distribution2/pcc.9.pq",
+            "type": "complex",
+            "unit": "MVA"
+        },
+        {
+            "key": "distribution3/pcc.13.pq",
+            "type": "complex",
+            "unit": "MVA"
+        },
+        {
+            "key": "distribution3_TE_agents/pcc.13.rt_energy.bid",
+            "type": "JSON"
+        },
+        {
+            "key": "distribution4/pcc.14.pq",
+            "type": "complex",
+            "unit": "MVA"
+        },
+        {
+            "key": "distribution5/pcc.11.pq",
+            "type": "complex",
+            "unit": "MVA"
+        },
+        {
+            "key": "distribution5/pcc.12.pq",
+            "type": "complex",
+            "unit": "MVA"
+        }
+    ]
+}
