@@ -1,0 +1,11 @@
+8/19 - AWS root broker established
+
+9/14 - Co-simulation interfaces defined 
+
+9/28 - Dummy federates written, posted to the repo, and ready for integrated testing
+
+10/14 - Multi-site co-simulation executed using dummy federates
+
+10/26 - Individual federates implemented (non-dummy versions) and validated (using dummy federates for all other federates)
+
+11/7 - Run integrated, multi-site co-simulation (same as 10/14 deliverable but with no dummy federates)
