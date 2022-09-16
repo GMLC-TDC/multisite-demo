@@ -29,6 +29,11 @@
                 "unit": "MMBtu"
             },
             {
+                "key": "pcc.6.pnv",
+                "type": "complex",
+                "unit": "V"
+            },
+            {
                 "key": "node.8.requested",
                 "type": "double",
                 "unit": "MMBtu"
@@ -84,6 +89,11 @@
                 "key": "ng1/node.6.avail",
                 "type": "double",
                 "unit": "MMBtu"
+            },
+            {
+                "key": "distribution6/pcc.9.pq",
+                "type": "complex",
+                "unit": "MVA"
             },
             {
                 "key": "ng1/node.8.avail",
