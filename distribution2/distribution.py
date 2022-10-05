@@ -166,7 +166,7 @@ def collect_data(data_list, idx, time, value):
 
 if __name__ == "__main__":
     
-    fed = h.helicsCreateValueFederateFromConfig("transmission_config.json")
+    fed = h.helicsCreateValueFederateFromConfig("distribution_config.json")
     
     logger.info(f"Created federate {fed.name}")
     logger.debug(f"\tNumber of subscriptions: {fed.n_inputs}")

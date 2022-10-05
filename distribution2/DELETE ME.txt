@@ -1,3 +1,0 @@
-Dummy file to get the folder structure to be commitable in the repo.
-
-Delete me when you have real content for this folder.
