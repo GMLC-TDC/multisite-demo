@@ -112,7 +112,7 @@ if __name__ == "__main__":
         1]
         
     # Nominal load values for each bus (in subscription order):
-        nominal_load = [
+    nominal_load = [
         0,
         0,
         21.7+12.7j,
@@ -125,7 +125,7 @@ if __name__ == "__main__":
         3.5+1.8j,
         6.1+1.6j]
         
-    nominal_bid = 1000]
+    nominal_bid = 1000
         
     # Arbitrarily defined initial bus voltages
     voltage_V = [
@@ -193,7 +193,7 @@ if __name__ == "__main__":
                 #   (increase load = decreased voltage)
                 # Voltage impact factor minimizes change in voltage due to change in load
                 voltage_impact_factor = 0.5
-                load_scaling_factor = (abs(scaled_load) - abs(nominal_load[j]))/abs(nominal_load[j]))
+                load_scaling_factor = (abs(scaled_load) - abs(nominal_load[j])) / abs(nominal_load[j])
                 voltage_impact_factor = 1 - (voltage_impact_factor * load_scaling_factor)
                 voltage_V[j] = voltage_V[j] * load_scaling_factor
                 logger.info(f'\t\tload_scaling_factor: {load_scaling_factor}')
@@ -206,13 +206,13 @@ if __name__ == "__main__":
                 #   on the same change in load
                 energy_bid = subid[j+1].vector # JSON with "price", "quantity" keys
                 sub_data = collect_data(sub_data, j+1, hour, energy_bid['quantity'])
-                bid_scaling_factor = (energy_bid['quantity'] - nominal_bid)/nominal_bid)
+                bid_scaling_factor = (energy_bid['quantity'] - nominal_bid) / nominal_bid
                 price_impact_factor = 1
                 energy_scaling_factor = 1 + (bid_scaling_factor * price_impact_factor)
                 energy_price = energy_price * energy_scaling_factor
                 logger.info(f'\t\tenergy_scaling_factor: {energy_scaling_factor}')
                 logger.info(f'\t\tenergy_price: {energy_price}')
-                pudid[j+1].publish(energy_price)
+                pubid[j+1].publish(energy_price)
                 pub_data = collect_data(pub_data, j, hour, energy_price)
                 
             elif nominal_mmbtu_avail[j] != 0:            
