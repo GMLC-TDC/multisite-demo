@@ -1,0 +1,34 @@
+{
+   "name": "transportation2",
+   "coreType": "zmq",
+   "only_transmit_on_change": true,
+   "period": 300,
+   "time_delta": 0.01,
+   "uninterruptible": false,
+   "publications": [
+      {
+         "key": "node.2.avail",
+         "type": "double",
+         "unit": "MW"
+      },
+      {
+         "key": "node.3.avail",
+         "type": "double",
+         "unit": "MW"
+      }
+   ],
+   "subscriptions": [
+      {
+         "required": false,
+         "key": "transmission/node.2.requested",
+         "type": "double",
+         "unit": "MW"
+      },
+      {
+         "required": false,
+         "key": "transmission/node.3.requested",
+         "type": "double",
+         "unit": "MW"
+      }
+   ]
+}
