@@ -99,13 +99,13 @@ if __name__ == "__main__":
 ############# From/To Transmission Node 8 ##################################
 
         # Get the power output of the node 8 in MW
-        P_MW3 = h.helicsInputGetDouble(("node.8.requested"))
-        logger.debug(f"\tReceived P_MW {P_MW3:.2f}" f" from input Transmission Node 8")
+        P_MW8 = h.helicsInputGetDouble(("node.8.requested"))
+        logger.debug(f"\tReceived P_MW {P_MW8:.2f}" f" from input Transmission Node 8")
         #P_MW = P_MMBtu*0.29307107
 
         # Calculate the heat rate and gas off take
-        HR8 = HR0 + HR1*P_MW3 + HR2*P_MW3*P_MW3
-        Pthermal8 = HR8*P_MW3/3.6   # 3.6 is a MJ/kWh to MJ/MWh conversion factor
+        HR8 = HR0 + HR1*P_MW8 + HR2*P_MW8*P_MW8
+        Pthermal8 = HR8*P_MW8/3.6   # 3.6 is a MJ/kWh to MJ/MWh conversion factor
         QSET8 = Pthermal8/GCV
 
         logger.debug(f"\tQSET requested from transmission Node 8 (m^3/s): {QSET8:.2f}")
@@ -118,11 +118,11 @@ if __name__ == "__main__":
         logger.debug(f"\tQSET available for transmission Node 8 (m^3/s): {QSET8:.2f}")
 
         Pthermal8 = GCV*QSET8
-        P_MW3_new = CalculatePMW (Pthermal8, P_MW3)
+        P_MW8_new = CalculatePMW (Pthermal8, P_MW8)
         #P_MMBtu_new = P_MW_new/0.29307107
 
-        h.helicsPublicationPublishDouble("node.8.avail", P_MW3_new)
-        logger.debug(f"\tElectrical output power available for Node 8 " f"{P_MW3_new}")
+        h.helicsPublicationPublishDouble("node.8.avail", P_MW8_new)
+        logger.debug(f"\tElectrical output power available for Node 8 " f"{P_MW8_new}")
 
 
     # Cleaning up HELICS stuff once we've finished the co-simulation.
