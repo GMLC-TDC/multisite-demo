@@ -1,0 +1,60 @@
+{
+  "matpower_most_data":{
+    "datapath": "../system_data/ERCOT/",
+	"case_name": "ERCOT_8_system.json",
+    "load_profile_info": {
+    	"filename": "2016_ERCOT_8_system_5min_load_data.csv",
+    	"resolution": 300,
+    	"starting_time": "2016-01-01 00:00:00",
+		"data_map": {
+			"columns": [2, 3, 4, 5, 6, 7, 8, 9], 
+    		"bus": [1 ,2, 3, 4, 5, 6, 7, 8]
+			}
+		},
+    "wind_profile_info": {
+    	"filename": "2016_ERCOT_5min_wind_data.csv",
+    	"resolution": 300,
+    	"starting_time": "2016-01-01 00:00:00",
+		"data_map": {
+			"columns": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35], 
+    		"gen": [77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+			}
+		}
+ 	},
+  "results_files": "../results/", 
+  "start_time": "2016-05-10 00:00:00", 
+  "end_time": "2016-05-11 00:00:00", 
+  "include_contingencies": false, 
+  "include_renewable_uncertainty": false,
+  "include_load_uncertainty": false,
+  "include_reserve_requirements": false,
+  "include_line_limits": true,
+  "include_physics_powerflow": true,
+  "include_real_time_market": true, 
+  "include_day_ahead_market": false, 
+  "include_helics": true, 
+  "cosimulation_bus": [2, 3],
+  "physics_powerflow":{
+    "type": "DC",
+    "interval": 60
+  }, 
+  "real_time_market":{
+    "type": "DC",
+    "interval": 300, 
+    "transactive": true
+  }, 
+  "day_ahead_market":{
+    "type": "DC",
+    "interval": 86400, 
+    "transactive": true
+  },
+  "helics_config": {
+    "coreType": "zmq",
+    "name": "TransmissionSim",
+    "period": 1,
+    "timeDelta": 0.0,
+    "logfile": "output.log",
+    "log_level": "warning",
+    "uninterruptible": true
+  }
+}
