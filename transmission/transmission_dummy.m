@@ -8,3 +8,5 @@ clc
 %% Check if MATLAB or OCTAVE
 isOctave = exist('OCTAVE_VERSION', 'builtin') ~= 0;
 
+%% Load Model
+wrapper_startup_orestis;
