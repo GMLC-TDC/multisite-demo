@@ -1,6 +1,6 @@
 {
   "coreInit": "--federates=1",
-  "name": "ng1",
+  "name": "SAInt_ng1",
   "core_type": "zmq",
   "log_level": "warning",
   "period": 0,
