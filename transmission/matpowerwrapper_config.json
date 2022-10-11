@@ -1,0 +1,42 @@
+{
+  "matpower_most_data":{
+    "datapath": "./system_data/",
+	"case_name": "case14.m"
+ 	},
+  "results_files": "../results/", 
+  "start_time": "2016-05-10 00:00:00", 
+  "end_time": "2016-05-11 00:00:00", 
+  "include_contingencies": false, 
+  "include_renewable_uncertainty": false,
+  "include_load_uncertainty": false,
+  "include_reserve_requirements": false,
+  "include_line_limits": true,
+  "include_physics_powerflow": true,
+  "include_real_time_market": true, 
+  "include_day_ahead_market": false, 
+  "include_helics": false, 
+  "cosimulation_bus": [2, 9, 11, 12, 13, 14],
+  "physics_powerflow":{
+    "type": "DC",
+    "interval": 60
+  }, 
+  "real_time_market":{
+    "type": "DC",
+    "interval": 300, 
+    "transactive": true
+  }, 
+  "day_ahead_market":{
+    "type": "DC",
+    "interval": 86400, 
+    "transactive": true
+  },
+  "helics_config": {
+    "coreType": "zmq",
+    "name": "TransmissionSim",
+    "period": 1,
+    "timeDelta": 0.0,
+    "logfile": "output.log",
+    "log_level": "warning",
+    "uninterruptible": true
+  }
+}
