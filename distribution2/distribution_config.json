@@ -1,0 +1,23 @@
+{
+    "name": "distribution_1",
+    "core_type": "zmq",
+    "log_level": "warning",
+    "period": 1,
+    "uninterruptible": false,
+    "terminate_on_error": true,
+    "strict_input_type_checking": true,
+    "publications": [
+        {
+            "key": "distribution1/pcc.2.pq",
+            "type": "complex",
+            "unit": "MVA"
+        }
+    ],
+    "subscriptions": [
+        {
+            "key": "pcc.2.pnv",
+            "type": "complex",
+            "unit": "V"
+        }
+    ]
+}
