@@ -15,7 +15,7 @@
   "include_real_time_market": true, 
   "include_day_ahead_market": false, 
   "include_helics": false, 
-  "cosimulation_bus": [2, 9, 11, 12, 13, 14],
+  "cosimulation_bus": [13],
   "physics_powerflow":{
     "type": "DC",
     "interval": 60
@@ -29,14 +29,5 @@
     "type": "DC",
     "interval": 86400, 
     "transactive": true
-  },
-  "helics_config": {
-    "coreType": "zmq",
-    "name": "TransmissionSim",
-    "period": 1,
-    "timeDelta": 0.0,
-    "logfile": "output.log",
-    "log_level": "warning",
-    "uninterruptible": true
-  }
+    }
 }

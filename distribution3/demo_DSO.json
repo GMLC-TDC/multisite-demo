@@ -1,6 +1,6 @@
 {
     "coreType": "zmq",
-    "name": "DSOSim",
+    "name": "distribution3",
     "period": 1,
     "timeDelta": 0.0,
     "logfile": "output.log",
@@ -10,46 +10,26 @@
     "coreName": "DSO Federate",
     "publications": [
         {
-            "global": true,
-            "key": "DSOSim.pcc.2.pq",
+            "global": false,
+            "key": "pcc.13.pq",
             "type": "complex"
         },
         {
-            "global": true,
-            "key": "DSOSim.pcc.2.rt_energy.bid",
-            "type": "JSON"
-        },
-        {
-            "global": true,
-            "key": "DSOSim.pcc.3.pq",
-            "type": "complex"
-        },
-        {
-            "global": true,
-            "key": "DSOSim.pcc.3.rt_energy.bid",
+            "global": false,
+            "key": "pcc.13.rt_energy.bid",
             "type": "JSON"
         }
     ],
     "subscriptions": [
         {
             "required": false,
-            "key": "TransmissionSim.pcc.2.pnv",
+            "key": "transmission/pcc.13.pnv",
             "type": "complex"
         },
         {
             "required": false,
-            "key": "TransmissionSim.pcc.2.rt_energy.cleared",
-            "type": "JSON"
-        },
-        {
-            "required": false,
-            "key": "TransmissionSim.pcc.3.pnv",
-            "type": "complex"
-        },
-        {
-            "required": false,
-            "key": "TransmissionSim.pcc.3.rt_energy.cleared",
-            "type": "JSON"
+            "key": "transmission/pcc.13.lmp",
+            "type": "double"
         }
     ]
 }
