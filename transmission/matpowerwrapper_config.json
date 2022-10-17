@@ -1,11 +1,20 @@
 {
   "matpower_most_data":{
-    "datapath": "./system_data/",
-	"case_name": "case14.m"
+    "datapath": "./system_data/", 
+    "case_name": "case14.m",
+    "load_profile_info": {
+      "filename": "2016_artificial_load_data.csv",
+      "resolution": 3600,
+      "starting_time": "2016-01-01 00:00:00", 
+      "data_map": {
+        "columns": [2, 3, 4, 5, 6, 7,  8,  9, 10, 11],
+        "bus":     [2, 3, 4, 5, 6, 9, 10, 11, 12, 14]
+      }
+    }
  	},
   "results_files": "../results/", 
-  "start_time": "2016-05-10 00:00:00", 
-  "end_time": "2016-05-11 00:00:00", 
+  "start_time": "2016-01-01 00:00:00", 
+  "end_time": "2016-01-02 00:00:00", 
   "include_contingencies": false, 
   "include_renewable_uncertainty": false,
   "include_load_uncertainty": false,
