@@ -1,0 +1,23 @@
+{
+  "name": "federation_1",
+  "federates": [    
+    {
+      "directory": ".",
+      "exec": "helics_broker -f 2 --loglevel=warning",
+      "host": "localhost",
+      "name": "broker"
+    },
+    {
+      "directory": ".",
+      "exec": "python -u transmission_dummy.py",
+      "host": "localhost",
+      "name": "transmission"
+    },
+    {
+      "directory": ".",
+      "exec": "python -u demo_DSO.py",
+      "host": "localhost",
+      "name": "dist3"
+    }
+  ]
+}
