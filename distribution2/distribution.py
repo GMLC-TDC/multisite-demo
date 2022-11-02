@@ -37,14 +37,14 @@ class Distribution(Vsource):
         self.line = Line(phase_cond, neut_cond, length_mi) 
         self.loads = [Load(s.real, s.imag, 0.333, 0.333, 0.333, 0.333, 0.333, 0.333) for s in self.va]
     
-    def solve(self, v1, v2, v3):
+    def solve(self, v1, v2, v3, hour=0):
         vsrc = self.voltage(v1, v2, v3)
         v = self.voltage(v1, v2, v3)
 
         for j in range(self.iter): 
             s = []
             for k, ld in enumerate(self.loads):     
-                s.append(ld.power(abs(v[k])))
+                s.append(ld.power(abs(v[k]), hour))
             s = np.array(s)
             i = np.array([np.conj(s / v)]).T         
             dv = np.matmul(self.line.zabc,  i)[:,0]
@@ -123,6 +123,61 @@ class Load:
     
     V0 = 12470
     
+    p_mult = [
+        0.234691835,
+        0.229034317,
+        0.227490826,
+        0.222013942,
+        0.195736465,
+        0.193091067,
+        0.193435559,
+        0.191517371,
+        0.192126068,
+        0.191746793,
+        0.189942295,
+        0.192108579,
+        0.192941868,
+        0.192050569,
+        0.194871089,
+        0.196599609,
+        0.194925606,
+        0.1958755,
+        0.194701331,
+        0.195934406,
+        0.271757251,
+        0.251337621,
+        0.260453095,
+        0.251741707,
+        0.251436243,
+    ]
+    q_mult = [
+        0.278016439,
+        0.277619014,
+        0.277022846,
+        0.276474464,
+        0.277174515,
+        0.278060909,
+        0.278921556,
+        0.279590884,
+        0.280457674,
+        0.281393433,
+        0.28235974,
+        0.282888484,
+        0.283838129,
+        0.284713835,
+        0.285651877,
+        0.285835895,
+        0.284156868,
+        0.282273533,
+        0.280600101,
+        0.306000758,
+        0.334530701,
+        0.334195778,
+        0.318559143,
+        0.279674607,
+        0.281256544,
+    ]
+    
     def __init__(self, P_base_zip, Q_base_zip, a0, a1, a2, b0, b1, b2):
         self.P_base_zip = P_base_zip
         self.Q_base_zip = Q_base_zip
@@ -134,9 +189,11 @@ class Load:
         self.b2 = b2
 
         
-    def power(self, v:float):
-        P = self.P_base_zip * (self.a0  + self.a1 * (v/self.V0) + self.a2* (v/self.V0)**2)
-        Q = self.Q_base_zip * (self.b0  + self.b1 * (v/self.V0) + self.b2* (v/self.V0)**2)
+    def power(self, v:float, hour:int=0):
+        p_base = self.P_base_zip * self.p_mult[hour]
+        q_base = self.Q_base_zip * self.q_mult[hour]
+        P = p_base * (self.a0  + self.a1 * (v/self.V0) + self.a2* (v/self.V0)**2)
+        Q = q_base * (self.b0  + self.b1 * (v/self.V0) + self.b2* (v/self.V0)**2)
         return P + 1j* Q
 
 def destroy_federate(fed):
@@ -161,6 +218,8 @@ def destroy_federate(fed):
 
 
 if __name__ == "__main__":
+    
+    
     
     fed = h.helicsCreateValueFederateFromConfig("distribution_config.json")
     
@@ -187,14 +246,16 @@ if __name__ == "__main__":
         
         v = fed.subscriptions['pcc.2.pnv'].double
         if v > 1.12 or v < 0.0:
-            v = 1
+            v = 12470
         
         s = dist.solve(
             cplx(v, 0),
             cplx(v, 120),
-            cplx(v, 240), 
+            cplx(v, 240),
+            int(granted_time / 3600)
         )
         s_total = sum(s)
+        print(s_total)
         fed.publications['distribution_2/pcc.2.pq'].publish(s_total)
 
         
