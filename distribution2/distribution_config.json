@@ -1,5 +1,6 @@
 {
-    "name": "distribution_1",
+    "coreInit": "--federates=1",
+    "name": "distribution_2",
     "core_type": "zmq",
     "log_level": "warning",
     "period": 1,
@@ -8,7 +9,7 @@
     "strict_input_type_checking": true,
     "publications": [
         {
-            "key": "distribution1/pcc.2.pq",
+            "key": "pcc.2.pq",
             "type": "complex",
             "unit": "MVA"
         }
@@ -16,7 +17,7 @@
     "subscriptions": [
         {
             "key": "pcc.2.pnv",
-            "type": "complex",
+            "type": "double",
             "unit": "V"
         }
     ]

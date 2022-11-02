@@ -49,7 +49,7 @@ class Distribution(Vsource):
             i = np.array([np.conj(s / v)]).T         
             dv = np.matmul(self.line.zabc,  i)[:,0]
             v = vsrc - dv * self.damp_coef
-            print(pd.DataFrame(v))
+            #print(pd.DataFrame(v))
 
         line_losses = np.matmul(self.line.zabc,  i**2)
         total_load = line_losses + s
@@ -158,10 +158,6 @@ def destroy_federate(fed):
     h.helicsCloseLibrary()
     logger.info("Federate finalized")
 
-def collect_data(data_list, idx, time, value):
-    data_list[idx][0].append(time)
-    data_list[idx][1].append(value)
-    return data_list
 
 
 if __name__ == "__main__":
@@ -171,66 +167,37 @@ if __name__ == "__main__":
     logger.info(f"Created federate {fed.name}")
     logger.debug(f"\tNumber of subscriptions: {fed.n_inputs}")
     logger.debug(f"\tNumber of publications: {fed.n_publications}")
-
-
-    subid = {}
-    pubid = {}
-    for k, v in fed.subscriptions.items():
-        logger.debug(f"\tRegistered subscription---> {k}")
-        subid[k] = fed.get_subscription_by_name(k)
-
-    for k, v in fed.publications.items():
-        logger.debug(f"\tRegistered publication---> {k}")
-        pubid[k] = fed.get_publication_by_name(k)
     
     hours_of_sim = 24
     total_interval = int(hours_of_sim * 60 * 60)
-    #update_interval = int(fed.property["TIME_PERIOD"])
-    grantedtime = 0
+    granted_time = 0
 
-    # Data collection lists
-    pub_data = []
-    sub_data = []
-    for j in range(0, fed.n_publications):
-        pub_data[j] = tuple([],[])
-        sub_data[j] = tuple([],[])
 
     fed.enter_executing_mode()
     logger.info("Entered HELICS execution mode")
 
+    update_interval = int(h.helicsFederateGetTimeProperty(fed, h.HELICS_PROPERTY_TIME_PERIOD)) * 60 * 60
 
     dist = Distribution()
-
-    while grantedtime < total_interval:
-        
-        requested_time = total_interval
+    while granted_time < total_interval:
+        requested_time = granted_time + update_interval
         logger.debug(f"Requesting time {requested_time}")
         granted_time = fed.request_time(requested_time)
         logger.debug(f"Granted time {granted_time}")
-        hour = granted_time / 3600
         
-        v = None
-        v = subid[0].complex
-        sub_data = collect_data(sub_data, j, hour, v)
-            
+        v = fed.subscriptions['pcc.2.pnv'].double
+        if v > 1.12 or v < 0.0:
+            v = 1
+        
         s = dist.solve(
             cplx(v, 0),
             cplx(v, 120),
             cplx(v, 240), 
         )
         s_total = sum(s)
+        fed.publications['distribution_2/pcc.2.pq'].publish(s_total)
 
-        pubid[0].publish(s_total)
-        pub_data = collect_data(pub_data, j, hour, s_total)
         
     destroy_federate(fed)
 
-    for j in range(0, fed.n_publications):
-        fig, ax1 = plt.subplots()
-        ax1.plot(pub_data[j][0], pub_data[j][1])
-        ax2 = ax1.twinx()
-        ax2.plot(sub_data[j][0], sub_data[j][1])
-        ax1.set_xlabel('simulation time (hr)')
-        plt.show()
-        
 
