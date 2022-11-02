@@ -29,7 +29,7 @@ class Vsource:
 
 class Distribution(Vsource):
     
-    def __init__(self, base_v = 12470, loads_mva=[10+ 1j * 5, 7+ 1j * 5, 1.5 + 1j * 0.5], phase_cond = "2/0_acsr", neut_cond = "1/0_acsr", length_mi = 1.00, iter= 100, damp_coef=0.2):
+    def __init__(self, base_v = 12470, loads_mva=[10+ 1j * 5, 7+ 1j * 5, 1.5 + 1j * 0.5], phase_cond = "2/0_acsr", neut_cond = "1/0_acsr", length_mi = 1.00, iter= 10, damp_coef=0.2):
         super().__init__(base_v) 
         self.iter = iter
         self.damp_coef = damp_coef
@@ -49,11 +49,26 @@ class Distribution(Vsource):
             i = np.array([np.conj(s / v)]).T         
             dv = np.matmul(self.line.zabc,  i)[:,0]
             v = vsrc - dv * self.damp_coef
-            #print(pd.DataFrame(v))
-
+            print(pd.DataFrame(v))
+        
         line_losses = np.matmul(self.line.zabc,  i**2)
         total_load = line_losses + s
         return s  / 1e6
+    
+    
+    def step(self, v1, v2, v3, hour=0, iter=0):
+        if iter == 0:
+            self.vsrc = self.voltage(v1, v2, v3)
+            self.v = self.voltage(v1, v2, v3)
+        
+        s = []
+        for k, ld in enumerate(self.loads):     
+            s.append(ld.power(abs(self.v[k]), hour))
+        s = np.array(s)
+        i = np.array([np.conj(s / self.v)]).T         
+        dv = np.matmul(self.line.zabc,  i)[:,0]
+        self.v = self.vsrc - dv * self.damp_coef
+        return s / 1e6
     
 class Line:
     
@@ -230,6 +245,7 @@ if __name__ == "__main__":
     hours_of_sim = 24
     total_interval = int(hours_of_sim * 60 * 60)
     granted_time = 0
+    max_iterations = 10
 
 
     fed.enter_executing_mode()
@@ -248,14 +264,18 @@ if __name__ == "__main__":
         if v > 1.12 or v < 0.0:
             v = 12470
         
-        s = dist.solve(
-            cplx(v, 0),
-            cplx(v, 120),
-            cplx(v, 240),
-            int(granted_time / 3600)
-        )
-        s_total = sum(s)
-        print(s_total)
+        s_total = None
+        for i in range(max_iterations):
+            s = dist.step(
+                cplx(v, 0),
+                cplx(v, 120),
+                cplx(v, 240),
+                int(granted_time / 3600),
+                i      
+            )
+            s_total = sum(s)
+            print(s_total)
+        
         fed.publications['distribution_2/pcc.2.pq'].publish(s_total)
 
         
