@@ -60,10 +60,10 @@ classdef MATPOWERWrapper
            Calculating Start & End points to load only the profile data required for Simulation.
            This will help reduce the memory by not having to store a year worth of data.  
            %}
-           start_data_point = (obj.start_time - input_data_reference_time)*3600*24/input_resolution;
-           end_data_point   = (obj.end_time - input_data_reference_time)*3600*24 /input_resolution;
-           start_column = min(profile_info.data_map.columns)-1;
-           end_column = max(profile_info.data_map.columns)-1;
+           start_data_point = int64((obj.start_time - input_data_reference_time)*3600*24/input_resolution);
+           end_data_point   = int64((obj.end_time - input_data_reference_time)*3600*24 /input_resolution);
+           start_column = int64(min(profile_info.data_map.columns)-1);
+           end_column = int64(max(profile_info.data_map.columns)-1);
            %{ 
             Loadind data based on the simulation duration.  
             Assumption:
@@ -455,8 +455,8 @@ end
 function [required_profile, required_intervals] = interpolate_profile_to_powerflow_interval(input_data, input_data_resolution, required_resolution, duration)
   
             raw_data_duration  = (length(input_data)-1)*input_data_resolution;
-            raw_data_intervals = linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)';
-            required_intervals = linspace(0, duration, (duration/required_resolution)+1)';
+            raw_data_intervals = round(linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)');
+            required_intervals = round(linspace(0, duration, (duration/required_resolution)+1)');
             if raw_data_intervals(1) <= required_intervals(1) && raw_data_intervals(end) >= required_intervals(end)
                 interpolated_data = interp1 (raw_data_intervals, input_data, required_intervals, "spline");
                 %%    required_profile = [required_intervals interpolated_data];

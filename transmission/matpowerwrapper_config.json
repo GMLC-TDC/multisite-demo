@@ -14,7 +14,7 @@
  	},
   "results_files": "../results/", 
   "start_time": "2016-01-01 00:00:00", 
-  "end_time": "2016-01-02 00:00:00", 
+  "end_time": "2016-01-01 02:00:00", 
   "include_contingencies": false, 
   "include_renewable_uncertainty": false,
   "include_load_uncertainty": false,
