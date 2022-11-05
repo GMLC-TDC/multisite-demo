@@ -92,7 +92,7 @@ classdef MATPOWERWrapper
            profile_info_col_idx = profile_info.data_map.columns;
            profile_info_bus_idx = profile_info.data_map.bus;
 
-           kW_kVAR_ratio = obj.mpc.bus(:,3)./ obj.mpc.bus(:,4);
+           kW_kVAR_ratio = obj.mpc.bus(profile_info_bus_idx,3)./ obj.mpc.bus(profile_info_bus_idx,4);
            obj.mpc.bus(profile_info_bus_idx, 3) = profile(profile_row, profile_info_col_idx)';
            obj.mpc.bus(profile_info_bus_idx, 4) = obj.mpc.bus(profile_info_bus_idx, 3) ./ kW_kVAR_ratio; 
     
