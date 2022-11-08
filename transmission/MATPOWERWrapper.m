@@ -60,10 +60,10 @@ classdef MATPOWERWrapper
            Calculating Start & End points to load only the profile data required for Simulation.
            This will help reduce the memory by not having to store a year worth of data.  
            %}
-           start_data_point = (obj.start_time - input_data_reference_time)*3600*24/input_resolution;
-           end_data_point   = (obj.end_time - input_data_reference_time)*3600*24 /input_resolution;
-           start_column = min(profile_info.data_map.columns)-1;
-           end_column = max(profile_info.data_map.columns)-1;
+           start_data_point = int64((obj.start_time - input_data_reference_time)*3600*24/input_resolution);
+           end_data_point   = int64((obj.end_time - input_data_reference_time)*3600*24 /input_resolution);
+           start_column = int64(min(profile_info.data_map.columns)-1);
+           end_column = int64(max(profile_info.data_map.columns)-1);
            %{ 
             Loadind data based on the simulation duration.  
             Assumption:
@@ -92,7 +92,7 @@ classdef MATPOWERWrapper
            profile_info_col_idx = profile_info.data_map.columns;
            profile_info_bus_idx = profile_info.data_map.bus;
 
-           kW_kVAR_ratio = obj.mpc.bus(:,3)./ obj.mpc.bus(:,4);
+           kW_kVAR_ratio = obj.mpc.bus(profile_info_bus_idx,3)./ obj.mpc.bus(profile_info_bus_idx,4);
            obj.mpc.bus(profile_info_bus_idx, 3) = profile(profile_row, profile_info_col_idx)';
            obj.mpc.bus(profile_info_bus_idx, 4) = obj.mpc.bus(profile_info_bus_idx, 3) ./ kW_kVAR_ratio; 
     
@@ -113,7 +113,7 @@ classdef MATPOWERWrapper
        end
        
        %% Temporary testing functions for bidding%% 
-       function [P_Q] = get_bids_from_cosimulation(obj, time, flexibility, price_range)
+       function obj = get_bids_from_cosimulation(obj, time, flexibility, price_range, blocks)
             
             %%   Get Flex and Inflex loads   %%
             cosim_buses = obj.config_data.cosimulation_bus;
@@ -123,27 +123,20 @@ classdef MATPOWERWrapper
                 profile = obj.profiles.('load_profile');
                 profile_row = find(time==profile(:,1));
                 load_data = profile(profile_row, cosim_bus+1);
+                kW_kVAR_factor = obj.mpc.bus(cosim_bus,3)/obj.mpc.bus(cosim_bus,4);
                 constant_load = load_data*(1-flexibility); 
-                flex_load = load_data*(flexibility); 
-                Q_values = [0 flex_load];
-                P_values = [max(price_range) min(price_range)];
-                LMPvsQ = polyfit(Q_values,P_values,1);
-                Q = linspace(0, flex_load, 10);
-                P = polyval(LMPvsQ, Q);
-                Rel_Cost = 1*P.*(Q); 
-                for i = 1:length(Rel_Cost)
-                    Actual_cost(i) = sum(Rel_Cost(1:i));
-                end    
-                P_Q(cosim_bus).bid = polyfit(Q,Actual_cost,2);
-                P_Q(cosim_bus).range = [0,flex_load];
-                P_Q(cosim_bus).constant_load = constant_load;
+                flex_load = load_data*(flexibility);                
+                Q_values = linspace(0, flex_load, blocks);
+                P_values = linspace(max(price_range), min(price_range),blocks); 
+                
+                DSO_bid = struct();
+                DSO_bid.P_bid = P_values;
+                DSO_bid.Q_bid = Q_values;
+                DSO_bid.constant_kW = constant_load;
+                DSO_bid.constant_kVAR = constant_load/kW_kVAR_factor;
+                obj.RT_bids{cosim_bus} = DSO_bid;
             end
-            
-            %%   Plotting PQ Bids   %%
-%             Q = linspace(constant_load, constant_load+flex_load, 10);
-%             P = polyval(P_Q(cosim_bus).bid, Q);
-%             plot([0, constant_load, Q],[max(price_range), max(price_range), P]);
-            
+
        end
         
        %% Running PF to emulate System States %% 
@@ -163,35 +156,95 @@ classdef MATPOWERWrapper
        end
        
        %% Running OPF to emulate Real Time Market %% 
-       function obj = run_RT_market(obj, time)  
-         
-           mpoptOPF = mpoption('verbose', 0, 'out.all', 0, 'model', obj.config_data.real_time_market.type);
-           solution = rundcopf(obj.mpc, mpoptOPF); 
+       function obj = run_RT_market(obj, time)
+           
+           %************* Wrapper.update_dispatchable_loads(bids)*************
+           for i = 1 : length(obj.config_data.cosimulation_bus)
+               Bus_number = obj.config_data.cosimulation_bus(i,1);
+               DSO_bid = obj.RT_bids{Bus_number};
+               Actual_cost = zeros(length(DSO_bid.Q_bid),1);
+               for k = 1:length(DSO_bid.Q_bid)
+                   if k == 1
+                       Actual_cost(k) = 0 + (DSO_bid.Q_bid(k) - 0)*DSO_bid.P_bid(k) ;
+                   else
+                       Actual_cost(k) = Actual_cost(k-1) + (DSO_bid.Q_bid(k) - DSO_bid.Q_bid(k-1))*DSO_bid.P_bid(k) ;
+                   end
+               end  
+
+               Coeff = polyfit(-1*DSO_bid.Q_bid, -1*Actual_cost, 2);
+               %***** Updating the unresponsive bus loads *****%
+               obj.mpc.bus(Bus_number,3) = DSO_bid.constant_kW; 
+               obj.mpc.bus(Bus_number,4) = DSO_bid.constant_kVAR; 
+               kW_kVAR_factor = DSO_bid.constant_kW / DSO_bid.constant_kVAR;
+               %***** Updating the responsive bus loads *****%
+               Generator_index = size(obj.mpc.gen,1) + 1;
+               obj.mpc.genfuel(Generator_index,:) = obj.mpc.genfuel(1,:);  %copy random genfuel entry
+               obj.mpc.gen(Generator_index,:) = 0;                             %new entry of 0's
+               obj.mpc.gen(Generator_index,1) = Bus_number;                    %set bus # 
+               obj.mpc.gen(Generator_index,5) = -1*max(DSO_bid.Q_bid)/kW_kVAR_factor; 
+               obj.mpc.gen(Generator_index,6) = 1;  
+               obj.mpc.gen(Generator_index,8) = 1;                             %gen status on
+               obj.mpc.gen(Generator_index,10) = -1*max(DSO_bid.Q_bid);        %Set reduction range
+               %***** Updating the responsive bus costs *****%
+               obj.mpc.gencost(Generator_index,:) = 0;                         %new entry of 0's
+               if strfind(obj.config_data.real_time_market.bid_model,"Poly")
+                   obj.mpc.gencost(Generator_index,1) = 2;                  %Polynomial model
+                   obj.mpc.gencost(Generator_index,4) = 3;                  %Degree 3 polynomial
+                   obj.mpc.gencost(Generator_index,5:7) = Coeff;            %Polynomial coefficients
+               else
+                   obj.mpc.gencost(Generator_index,1) = 1;                              %Block model
+                   obj.mpc.gencost(Generator_index,4) = length(DSO_bid.Q_bid);          %# of blocks
+                   [Q_reverse, idx] = sort(-1*DSO_bid.Q_bid);
+                   Cost_reverse = -1*Actual_cost(idx);
+                   for a = 1:length(DSO_bid.Q_bid)
+                       obj.mpc.gencost(Generator_index,3+(2*a)) = Q_reverse(a);
+                       obj.mpc.gencost(Generator_index,4+(2*a)) = Cost_reverse(a);
+                   end
+               end
+           end
+            
+           success = 0; tries = 0 ; 
+           while success < 1 || tries > 2
+               mpoptOPF = mpoption('verbose', 0, 'out.all', 0, 'model', obj.config_data.real_time_market.type);
+               solution = rundcopf(obj.mpc, mpoptOPF); 
+               success = solution.success;
+               tries = tries + 1;
+               if success == 0
+                   fprintf('Wrapper: RT OPF Failed on attempt %d, Trying again with increased line limits',tries);
+                   obj.mpc.branch(:,6:8) = obj.mpc.branch(:,6:8)*1.1;
+               end
+           end
+           
+           %************* Wrapper.updating Allocations (bids)*************%
+           for i = 1 : length(obj.config_data.cosimulation_bus)
+               Bus_number = obj.config_data.cosimulation_bus(length(obj.config_data.cosimulation_bus)-i+1,1);
+               Generator_index = size(obj.mpc.gen,1);
+               solution.bus(Bus_number,3) = solution.bus(Bus_number,3) - solution.gen(Generator_index,2);
+               obj.RT_allocations{Bus_number}.P_clear =  obj.mpc.bus(Bus_number,14); 
+               obj.RT_allocations{Bus_number}.Q_clear =  obj.mpc.bus(Bus_number,3); 
+               
+               obj.mpc.genfuel(Generator_index,:) = [];
+               obj.mpc.gen(Generator_index,:) = [];
+               obj.mpc.gencost(Generator_index,:) = [];
+               solution.genfuel(Generator_index,:) = [];
+               solution.gen(Generator_index,:) = [];
+               solution.gencost(Generator_index,:) = [];
+      
+           end
+           
+           %************* Wrapper.Saving Results*************%
            obj.mpc.gen(:,2:3) = solution.gen(:, 2:3);
            obj.mpc.bus(:,8:17) = solution.bus(:, 8:17);
-           if solution.success == 1
-               if isempty(obj.results.RTM)
-                   obj.results.RTM(1).PG  = [time solution.gen(:, 2)'];
-                   obj.results.RTM(1).PD  = [time solution.bus(:, 3)'];
-                   obj.results.RTM(1).LMP = [time solution.bus(:, 14)'];
-               else
-                   obj.results.RTM.PG  = [obj.results.RTM.PG;  time solution.gen(:, 2)'];
-                   obj.results.RTM.PD  = [obj.results.RTM.PD;  time solution.bus(:, 3)'];
-                   obj.results.RTM.LMP = [obj.results.RTM.LMP; time solution.bus(:, 14)'];
-               end  
+           if isempty(obj.results.RTM)
+               obj.results.RTM(1).PG  = [time solution.gen(:, 2)'];
+               obj.results.RTM(1).PD  = [time solution.bus(:, 3)'];
+               obj.results.RTM(1).LMP = [time solution.bus(:, 14)'];
            else
-               fprintf('Wrapper: OPF failed to converged at %d, retrying', time/3600);
-               %% Increasing the branch flow %%
-               obj.mpc.branch(:,6:8) = obj.mpc.branch(:,6:8)*1.2;
-               solution = rundcopf(obj.mpc, mpoptOPF); 
-               obj.mpc.gen(:,2:3) = solution.gen(:, 2:3);
-               obj.mpc.bus(:,8:17) = solution.bus(:, 8:17);
                obj.results.RTM.PG  = [obj.results.RTM.PG;  time solution.gen(:, 2)'];
                obj.results.RTM.PD  = [obj.results.RTM.PD;  time solution.bus(:, 3)'];
                obj.results.RTM.LMP = [obj.results.RTM.LMP; time solution.bus(:, 14)'];
-               
            end
-               
+                
        end
        
        %% Preparing HELICS configuration %%
@@ -369,9 +422,31 @@ classdef MATPOWERWrapper
             end    
        end
        
+       %% Write Wrapper Results to csv
+       function write_results(obj,case_name)
+           
+           %****** Creating the Ouputs Directory ******%
+           if ~exist('../outputs', 'dir')
+               mkdir('../outputs')               
+           end  
+           %****** Dumping the results for RT market ******%
+           if obj.config_data.include_real_time_market
+               names = fieldnames(obj.results.RTM);
+               for idx = 1:length(names)
+                   file_name = strcat('../outputs/',case_name,'_RTM_',names{idx},'.csv');
+                   writematrix(obj.results.RTM.(names{idx}), file_name);
+               end          
+           end
+           
+       end
+       
+       
    end
 
-end   
+end  
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% Interpolate Input Profile  %%%%%%%%%%%%%%%%%%%%%%%
@@ -380,8 +455,8 @@ end
 function [required_profile, required_intervals] = interpolate_profile_to_powerflow_interval(input_data, input_data_resolution, required_resolution, duration)
   
             raw_data_duration  = (length(input_data)-1)*input_data_resolution;
-            raw_data_intervals = linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)';
-            required_intervals = linspace(0, duration, (duration/required_resolution)+1)';
+            raw_data_intervals = round(linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)');
+            required_intervals = round(linspace(0, duration, (duration/required_resolution)+1)');
             if raw_data_intervals(1) <= required_intervals(1) && raw_data_intervals(end) >= required_intervals(end)
                 interpolated_data = interp1 (raw_data_intervals, input_data, required_intervals, "spline");
                 %%    required_profile = [required_intervals interpolated_data];
