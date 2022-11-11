@@ -23,7 +23,7 @@
   "include_physics_powerflow": true,
   "include_real_time_market": true, 
   "include_day_ahead_market": false, 
-  "include_helics": false, 
+  "include_helics": true, 
   "cosimulation_bus": [13],
   "physics_powerflow":{
     "type": "DC",
@@ -32,7 +32,8 @@
   "real_time_market":{
     "type": "DC",
     "interval": 300, 
-    "transactive": true
+    "transactive": true,
+	"bid_model": "Polynomial"
   }, 
   "day_ahead_market":{
     "type": "DC",
