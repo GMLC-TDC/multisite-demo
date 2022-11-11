@@ -99,7 +99,7 @@ def create_helics_configuration(helics_config, filename):
     return
 
 if __name__ == "__main__":
-    json_path = './matpowerwrapper_config.json'
+    json_path = '../transmission/matpowerwrapper_config.json'
     with open(json_path, 'r') as f:
         wrapper_config = json.loads(f.read())
         
@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     ##### Starting HELICS Broker #####
     # h.helicsBrokerDisconnect(broker)
-    # broker = create_broker(2)
+    broker = create_broker(2)
 
 
     ##### Registering DSO Federate #####
@@ -237,7 +237,9 @@ if __name__ == "__main__":
                 sub_key = [key for key in sub_keys  if ('pcc.' + str(cosim_bus) + '.lmp') in key ]
                 logger.info(f'\tSubscription key: {sub_key[0]}')
                 sub_object = h.helicsFederateGetSubscription(fed, sub_key[0])
-                cleared_price = h.helicsInputGetDouble(sub_object)
+                allocation_raw = h.helicsInputGetString(sub_object)
+                allocation = json.loads(allocation_raw)
+                cleared_price = allocation['P_clear']
                 logger.info('\tDSO: Received cleared price {} for Bus {}'.format(cleared_price, cosim_bus))
 
             tnext_real_time_market = tnext_real_time_market + wrapper_config['real_time_market']['interval']           
