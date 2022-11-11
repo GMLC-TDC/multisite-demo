@@ -17,7 +17,7 @@ def destroy_federate(fed):
 
 
 # Calculating the electrical output from the thermal power input iteratively
-def CalculatePMW (Y, X0):
+def CalculatePMW (Y, X0, X_new):
     iter = 0
     while iter < 20:       
         delY = Y*3.6 - (HR0*X_new + HR1*X_new*X0 + HR2*X_new*X_new*X_new) # = Pthermal/3.6
@@ -47,6 +47,8 @@ if __name__ == "__main__":
     h.helicsFederateEnterExecutingMode(fed)
     logger.info("Entered HELICS execution mode")
 
+    print(fed.publications.keys())
+
     
     update_interval = int(h.helicsFederateGetTimeProperty(fed, h.HELICS_PROPERTY_TIME_PERIOD))
     grantedtime = 0
@@ -59,6 +61,9 @@ if __name__ == "__main__":
     QMin = 0           # m^3/s
     QMax = 1000        # m^3/s
     
+    P_MW6_new = 0
+    P_MW8_new = 0 
+
     # As long as granted time is in the time range to be simulated...
     while grantedtime < total_interval:
 
@@ -71,7 +76,7 @@ if __name__ == "__main__":
         ############# From/To Transmission Node 6 ##################################
 
         # Get the power output of the node 6 in MW
-        P_MW6 = h.helicsInputGetDouble(("node.6.requested"))
+        P_MW6 = fed.subscriptions["node.6.requested"].double
         logger.debug(f"\tReceived P_MW {P_MW6:.2f}" f" from input Transmission Node 6")
         #P_MW = P_MMBtu*0.29307107
 
@@ -89,17 +94,17 @@ if __name__ == "__main__":
             QSET6 = QMin
         logger.debug(f"\tQSET available for transmission Node 6 (m^3/s): {QSET6:.2f}")
 
-        Pthermal6 = GCV*QSET6
-        P_MW6_new = CalculatePMW (Pthermal6, P_MW6)
+        Pthermal6 = GCV * QSET6
+        P_MW6_new = CalculatePMW (Pthermal6, P_MW6, P_MW6_new)
         #P_MMBtu_new = P_MW_new/0.29307107
 
-        h.helicsPublicationPublishDouble("node.6.avail", P_MW6_new)
+        fed.publications["ng1/node.6.avail"].publish(P_MW6_new)
         logger.debug(f"\tElectrical output power available for Node 6 " f"{P_MW6_new:.2f}")
 
 ############# From/To Transmission Node 8 ##################################
 
         # Get the power output of the node 8 in MW
-        P_MW8 = h.helicsInputGetDouble(("node.8.requested"))
+        P_MW8 = fed.subscriptions["node.8.requested"].double
         logger.debug(f"\tReceived P_MW {P_MW8:.2f}" f" from input Transmission Node 8")
         #P_MW = P_MMBtu*0.29307107
 
@@ -118,10 +123,10 @@ if __name__ == "__main__":
         logger.debug(f"\tQSET available for transmission Node 8 (m^3/s): {QSET8:.2f}")
 
         Pthermal8 = GCV*QSET8
-        P_MW8_new = CalculatePMW (Pthermal8, P_MW8)
+        P_MW8_new = CalculatePMW (Pthermal8, P_MW8, P_MW8_new)
         #P_MMBtu_new = P_MW_new/0.29307107
 
-        h.helicsPublicationPublishDouble("node.8.avail", P_MW8_new)
+        fed.publications["ng1/node.8.avail"].publish(P_MW8_new)
         logger.debug(f"\tElectrical output power available for Node 8 " f"{P_MW8_new}")
 
 
