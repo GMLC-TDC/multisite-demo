@@ -1,0 +1,1 @@
+you do not need to set up sublications and subscriptions when using the config file

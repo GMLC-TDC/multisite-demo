@@ -1,0 +1,35 @@
+{
+    "coreType": "zmq",
+    "name": "distribution3",
+    "period": 1,
+    "timeDelta": 0.0,
+    "logfile": "output.log",
+    "log_level": "warning",
+    "uninterruptible": true,
+    "coreInit": "--federates=1",
+    "coreName": "DSO Federate",
+    "publications": [
+        {
+            "global": false,
+            "key": "pcc.13.pq",
+            "type": "complex"
+        },
+        {
+            "global": false,
+            "key": "pcc.13.rt_energy.bid",
+            "type": "JSON"
+        }
+    ],
+    "subscriptions": [
+        {
+            "required": false,
+            "key": "transmission/pcc.13.pnv",
+            "type": "complex"
+        },
+        {
+            "required": false,
+            "key": "transmission/pcc.13.lmp",
+            "type": "double"
+        }
+    ]
+}

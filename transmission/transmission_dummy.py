@@ -11,11 +11,15 @@ trevor.hardy@pnnl.gov
 import matplotlib.pyplot as plt
 import helics as h
 import logging
-
+import pprint
+import json
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
+
+# Setting up pretty printing, mostly for debugging.
+pp = pprint.PrettyPrinter(indent=4)
 
 
 def destroy_federate(fed):
@@ -47,6 +51,7 @@ if __name__ == "__main__":
 
     ##########  Registering  federate and configuring from JSON ################
     fed = h.helicsCreateValueFederateFromConfig("transmission_config.json")
+    #logger.info(pp.pformat(fed))
 
     logger.info(f"Created federate {fed.name}")
     logger.debug(f"\tNumber of subscriptions: {fed.n_inputs}")
@@ -56,13 +61,19 @@ if __name__ == "__main__":
     #   publications and subscriptions
     subid = {}
     pubid = {}
-    for k, v in fed.subscriptions.items():
-        logger.debug(f"\tRegistered subscription---> {k}")
-        subid[k] = fed.get_subscription_by_name(k)
+    logger.info("Subscription details:")
+    #logger.info(pp.pformat(fed.subscriptions))
+    
+    for i in range(0, fed.n_inputs):
+        # logger.info(f"k: {k}")
+        # logger.info(f"v: {v}")
+        subid[i] = fed.get_subscription_by_index(i)
+        logger.debug(f"\tRegistered subscription---> {subid[i].target}")
 
-    for k, v in fed.publications.items():
-        logger.debug(f"\tRegistered publication---> {k}")
-        pubid[k] = fed.get_publication_by_name(k)
+    for i in range(0, fed.n_publications):
+        pubid[i] = fed.get_publication_by_index(i)
+        #logger.info(pp.pformat(pubid[i]))
+        logger.debug(f"\tRegistered publication---> {pubid[i].name}")
         
         
 
@@ -79,8 +90,8 @@ if __name__ == "__main__":
     pub_data = []
     sub_data = []
     for j in range(0, fed.n_publications):
-        pub_data[j] = tuple([],[])
-        sub_data[j] = tuple([],[])
+        pub_data.append([[],[]])
+        sub_data.append([[],[]])
         
     
     # Assumes the subscriptions are in the following order:
@@ -95,6 +106,24 @@ if __name__ == "__main__":
     #   8   distribution4/pcc.14.pq
     #   9   distribution5/pcc.11.pq
     #   10  distribution5/pcc.12.pq
+    
+    double_idx = [0, 1, 3, 4]
+    complex_idx = [2, 5, 6, 8, 9, 10]
+    json_idx = [7]
+    default_sub_values = [
+        1000.0,
+        1000.0,
+        21.7+12.7j,
+        1000.0,
+        1000.0,
+        29.5+16.6j,
+        13.5+5.8j,
+        '{"constant_kW": 13.5, "constant_kVAR": 5.8, "P_bid": [100, 100], "Q_bid": [100, 100]}',
+        14.9+5j,
+        3.5+1.8j,
+        6.1+1.6j
+    ]
+    
     
     # Scaling-factors for each subscription; not all subscriptions are for 
     #   distribution loads
@@ -112,7 +141,7 @@ if __name__ == "__main__":
         1]
         
     # Nominal load values for each bus (in subscription order):
-        nominal_load = [
+    nominal_load = [
         0,
         0,
         21.7+12.7j,
@@ -125,29 +154,40 @@ if __name__ == "__main__":
         3.5+1.8j,
         6.1+1.6j]
         
-    nominal_bid = 1000]
+    nominal_bid = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        {"constant_kW": 13.5, "constant_kVAR": 5.8, "P_bid": [100, 100], "Q_bid": [100, 100]},
+        0,
+        0,
+        0]
         
     # Arbitrarily defined initial bus voltages
     voltage_V = [
         0,
         0,
-        100000,
+        100000.0+10000j,
         0,
         0,
-        100000,
-        100000,
+        100000.0+10000j,
+        100000.0+10000j,
         0,
-        100000,
-        100000,
-        100000]
+        100000.0+10000j,
+        100000.0+10000j,
+        100000.0+10000j]
         
     # Arbitrarily defined initial generator setpoint fuel consumption
     mmbtu_using = [
-        1000,
-        1000,
+        1000.0,
+        1000.0,
         0,
-        1000,
-        1000,
+        1000.0,
+        1000.0,
         0,
         0,
         0,
@@ -155,23 +195,65 @@ if __name__ == "__main__":
         0,
         0]
         
-    # Arbitrarily defined initial generator setpoint fuel consumption
+    # Arbitrarily defined available MMBtu from ng federates
+    nominal_mmbtu_avail = [
+        1000.0,
+        1000.0,
+        0,
+        1000.0,
+        1000.0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0]
+        
+    # Arbitrarily defined initial energy price
     energy_price = 100
     
     
-        
+    # Defining default values for the subscriptions by API since doing so is
+    #   not supported via JSON config at the time of this writing.
+    logger.info('Setting default values')
+    for idx, val in enumerate(default_sub_values):
+        logger.info(f'\tdefault value for {subid[idx].target}: {default_sub_values[idx]}')
+        #subid[i].set_default(default_sub_values[i])
+        if idx in double_idx:
+            h.helicsInputSetDefaultDouble(subid[idx], default_sub_values[idx])
+        elif idx in complex_idx:
+            h.helicsInputSetDefaultComplex(subid[idx], default_sub_values[idx])
+        elif idx in json_idx:
+            h.helicsInputSetDefaultString(subid[idx], default_sub_values[idx])
+    
+    granted_time = 0  
+    
+    # keeping track of past bids to only update when a new value comes indent
+    past_bid = nominal_bid[7]
 
     ##############  Entering Execution Mode  ##################################
     fed.enter_executing_mode()
     logger.info("Entered HELICS execution mode")
-    # As long as granted time is in the time range to be simulated...
-    while grantedtime < total_interval:
+    
+    logger.info('Checking defaults for all subscriptions')
+    for idx in range(0, fed.n_inputs):
+        logger.info(f'\tsubscription: {subid[idx].target} (sub. index: {idx})')
+        if idx in double_idx:
+            logger.info(f'\t\tdouble default value: {subid[idx].double}')
+        elif idx in complex_idx:
+            logger.info(f'\t\tcomplex default value: {subid[idx].complex}')
+        elif idx in json_idx:
+            logger.info(f'\t\tcomplex default value: {pp.pformat(subid[idx].json)}')
+    
+    
+    # As long as granted time is in the time range to be simulated...   
+    while granted_time < total_interval:
 
         # Time request for the next physical interval to be simulated
         requested_time = total_interval
         # logger.debug(f"Requesting time {requested_time}")
         granted_time = fed.request_time(requested_time)
-        logger.debug(f"Granted time {granted_time}")
+        logger.debug(f'Granted time {granted_time} ({granted_time/3600} of {hours_of_sim} hours)')
         hour = granted_time / 3600
 
         # Iterating over publications in this case since this example
@@ -179,41 +261,75 @@ if __name__ == "__main__":
 
             
         for j in range(0, fed.n_subscriptions):
-            logger.info(f'\tsubscription: {fed.subscriptions[j]}')
+            logger.info(f'\tProcessing subscription: {subid[j].target} (sub. index: {j})')
             if nominal_load[j] != 0:
                 # Scaling loads so distribution load matches nominal load assumed 
                 #   by transmission model
                 scaled_load = subid[j].complex * load_scaling[j]
-                logger.info(f'\t\tscaled_load: {scaled_load[j]}')
-                sub_data = collect_data(sub_data, j, hour, scaled_load)
+                logger.info(f'\t\tscaled_load: {scaled_load}')
+                load_mag = abs(scaled_load)
+                sub_data = collect_data(sub_data, j, hour, load_mag)
             
                 # Scaling bus voltage due to change in load
                 # Calculating the magnitude of difference between the nominal and 
                 #   provided load and scaling nodal voltage appropriately
                 #   (increase load = decreased voltage)
                 # Voltage impact factor minimizes change in voltage due to change in load
+                #   to keep voltage impact reasonable
                 voltage_impact_factor = 0.5
-                load_scaling_factor = (abs(scaled_load) - abs(nominal_load[j]))/abs(nominal_load[j]))
+                load_scaling_factor = (abs(scaled_load) - abs(nominal_load[j])) / abs(nominal_load[j])
                 voltage_impact_factor = 1 - (voltage_impact_factor * load_scaling_factor)
-                voltage_V[j] = voltage_V[j] * load_scaling_factor
+                voltage_V[j] = voltage_V[j] * voltage_impact_factor
                 logger.info(f'\t\tload_scaling_factor: {load_scaling_factor}')
                 logger.info(f'\t\tvoltage_impact_factor: {voltage_impact_factor}')
                 logger.info(f'\t\tvoltage_V: {voltage_V[j]}')
-                pubid[j].publish(voltage_V)
-                pub_data = collect_data(pub_data, j, hour, voltage_V)
+                # Pythonic API not working for me right now
+                # pubid[j].publish(voltage_V)
+                h.helicsPublicationPublishComplex(pubid[j], voltage_V[j])
+                logger.info(f'\t\tPublishing voltage_V: {voltage_V[j]}')
+                Vmag = abs(voltage_V[j])
+                pub_data = collect_data(pub_data, j, hour, Vmag)
                 
+            elif nominal_bid[j] != 0:
                 # Adjusting energy price (the publication next in order) based
                 #   on the same change in load
-                energy_bid = subid[j+1].vector # JSON with "price", "quantity" keys
-                sub_data = collect_data(sub_data, j+1, hour, energy_bid['quantity'])
-                bid_scaling_factor = (energy_bid['quantity'] - nominal_bid)/nominal_bid)
-                price_impact_factor = 1
-                energy_scaling_factor = 1 + (bid_scaling_factor * price_impact_factor)
-                energy_price = energy_price * energy_scaling_factor
-                logger.info(f'\t\tenergy_scaling_factor: {energy_scaling_factor}')
-                logger.info(f'\t\tenergy_price: {energy_price}')
-                pudid[j+1].publish(energy_price)
-                pub_data = collect_data(pub_data, j, hour, energy_price)
+                energy_bid_string = subid[j].string
+                energy_bid = json.loads(energy_bid_string)
+                logger.info(f'\t\tenergy_bid: {pp.pformat(energy_bid_string)}')
+                #Bid JSON looks like:
+                #{
+                #    "constant_kW": double,
+                #    "constant_kVAR": double,
+                #    "P_bid":[
+                #        double,
+                #        double,
+                #        ...
+                #   ],
+                #    "Q_bid":[
+                #        double,
+                #        double,
+                #        ...
+                #    ],
+                #}
+                if past_bid["constant_kW"] != energy_bid["constant_kW"]:
+                    logger.info("\t\tNew bid, update price")
+                    logger.info(f'\t\t\tcurrent energy_price: {energy_price}')
+                    past_bid = energy_bid
+                    sub_data = collect_data(sub_data, j, hour, energy_bid["constant_kW"])
+                    bid_scaling_factor = (energy_bid["constant_kW"] - nominal_bid[j]["constant_kW"]) / nominal_bid[j]["constant_kW"]
+                    price_impact_factor = 0.2
+                    energy_scaling_factor = bid_scaling_factor * price_impact_factor
+                    energy_price = energy_price * (1 + energy_scaling_factor)
+                    logger.info(f'\t\t\tbid_scaling_factor: {bid_scaling_factor}')
+                    logger.info(f'\t\t\tenergy_scaling_factor: {energy_scaling_factor}')
+                    logger.info(f'\t\t\tenergy_price: {energy_price}')
+                
+                    # pubid[j].publish(energy_price)
+                    h.helicsPublicationPublishDouble(pubid[j], energy_price)
+                    logger.info(f'\t\tPublishing energy_price: {energy_price}')
+                    pub_data = collect_data(pub_data, j, hour, energy_price)
+                else:
+                    logger.info("\t\tNo new bid")
                 
             elif nominal_mmbtu_avail[j] != 0:            
                 # Scaling all bus voltages due to change in generator output due to lack of fuel
@@ -222,13 +338,16 @@ if __name__ == "__main__":
                 logger.info(f'\t\tmmbtu_avail: {mmbtu_avail}')
                 mmbtu_using[j] = max(mmbtu_using[j], mmbtu_avail)
                 logger.info(f'\t\tmmbtu_using: {mmbtu_using[j]}')
-                pubid[j].publish(mmbtu_using)
-                pub_data = collect_data(pub_data, j, hour, mmbtu_using)
+                # Pythonic API not working for me right now
+                # pubid[j].publish(mmbtu_using)
+                h.helicsPublicationPublishDouble(pubid[j], mmbtu_using[j])
+                logger.info(f'\t\tPublishing mmbtu_using: {mmbtu_using[j]}')
+                pub_data = collect_data(pub_data, j, hour, mmbtu_using[j])
             
     destroy_federate(fed)
 
 
-
+    logger.info('Making graphs')
     # Printing out final results graphs for comparison/diagnostic purposes.
     pub_labels = [  'MMBtu using', 
                     'MMBtu using', 
@@ -248,10 +367,23 @@ if __name__ == "__main__":
                     'MMBtu available',
                     'Bus 9 load (MVA)',
                     'Bus 13 load (MVA)',
-                    'Bus 13 energy bid quantity (MWh)',
+                    'Bus 13 inflexible energy bid quantity (MWh)',
                     'Bus 14 load (MVA)',
                     'Bus 11 load (MVA)',
                     'Bus 12 load (MVA)']
+    graph_file_names = [
+                    'Node 2 Natural Gas.png',
+                    'Node 3 Natural Gas.png',
+                    'Node 2 Distribution.png',
+                    'Node 6 Natural Gas.png',
+                    'Node 8 Natural Gas.png',
+                    'Node 9 Distribution.png',
+                    'Node 13 Distribution.png',
+                    'Node 13 Prices.png',
+                    'Node 14 Distribution.png',
+                    'Node 11 Distribution.png',
+                    'Node 12 Distribution.png']
+   
    
     for j in range(0, fed.n_publications):
         fig, ax1 = plt.subplots()
@@ -262,4 +394,5 @@ if __name__ == "__main__":
         ax1.set_ylabel(pub_labels[j])
         ax2.set_ylabel(sub_labels[j])
         plt.show()
+        plt.savefig(graph_file_names[j])
         

@@ -1,0 +1,24 @@
+{
+    "coreInit": "--federates=1",
+    "name": "distribution_2",
+    "core_type": "zmq",
+    "log_level": "warning",
+    "period": 1,
+    "uninterruptible": false,
+    "terminate_on_error": true,
+    "strict_input_type_checking": true,
+    "publications": [
+        {
+            "key": "pcc.2.pq",
+            "type": "complex",
+            "unit": "MVA"
+        }
+    ],
+    "subscriptions": [
+        {
+            "key": "pcc.2.pnv",
+            "type": "double",
+            "unit": "V"
+        }
+    ]
+}
