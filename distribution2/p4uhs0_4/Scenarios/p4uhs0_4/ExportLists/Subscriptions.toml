@@ -1,0 +1,8 @@
+["Vsource.source"]
+Property = "pu"
+"Subscription ID" = "p4u.Load.load_p4uhs0.puVmagAngle"
+Unit = "pu"
+Subscribe = true
+"Data type" = "vector"
+Multiplier = 2.510218561694025e-5
+index = 0

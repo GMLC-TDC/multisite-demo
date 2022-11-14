@@ -1,0 +1,10 @@
+New Loadshape.SFO_37.8067_-122.4322_25_180 npts=2016 interval=0.25 mult = (dblFile=../../../../../profiles/SFO_37.8067_-122.4322_25_180.sng)
+
+New Loadshape.SFO_37.8067_-122.4322_35_180 npts=2016 interval=0.25 mult = (dblFile=../../../../../profiles/SFO_37.8067_-122.4322_35_180.sng)
+
+New Loadshape.com_kw_29570_pu npts=2016 interval=0.25 mult = (dblFile=../../../../../profiles/com_kw_29570_pu.sng) qmult = (dblFile=../../../../../profiles/com_kvar_29570_pu.sng)
+
+New Loadshape.com_kw_21256_pu npts=2016 interval=0.25 mult = (dblFile=../../../../../profiles/com_kw_21256_pu.sng) qmult = (dblFile=../../../../../profiles/com_kvar_21256_pu.sng)
+
+New Loadshape.com_kw_15998_pu npts=2016 interval=0.25 mult = (dblFile=../../../../../profiles/com_kw_15998_pu.sng) qmult = (dblFile=../../../../../profiles/com_kvar_15998_pu.sng)
+
