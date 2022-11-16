@@ -204,7 +204,7 @@ classdef MATPOWERWrapper
            end
             
            success = 0; tries = 0 ; 
-           while success < 1 || tries > 2
+           while success < 1 && tries < 2
                mpoptOPF = mpoption('verbose', 0, 'out.all', 0, 'model', obj.config_data.real_time_market.type);
                solution = rundcopf(obj.mpc, mpoptOPF); 
                success = solution.success;
@@ -220,8 +220,8 @@ classdef MATPOWERWrapper
                Bus_number = obj.config_data.cosimulation_bus(length(obj.config_data.cosimulation_bus)-i+1,1);
                Generator_index = size(obj.mpc.gen,1);
                solution.bus(Bus_number,3) = solution.bus(Bus_number,3) - solution.gen(Generator_index,2);
-               obj.RT_allocations{Bus_number}.P_clear =  obj.mpc.bus(Bus_number,14); 
-               obj.RT_allocations{Bus_number}.Q_clear =  obj.mpc.bus(Bus_number,3); 
+               obj.RT_allocations{Bus_number}.P_clear =  solution.bus(Bus_number,14); 
+               obj.RT_allocations{Bus_number}.Q_clear =  solution.bus(Bus_number,3); 
                
                obj.mpc.genfuel(Generator_index,:) = [];
                obj.mpc.gen(Generator_index,:) = [];
@@ -455,9 +455,9 @@ end
 function [required_profile, required_intervals] = interpolate_profile_to_powerflow_interval(input_data, input_data_resolution, required_resolution, duration)
   
             raw_data_duration  = (length(input_data)-1)*input_data_resolution;
-            raw_data_intervals = round(linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)');
-            required_intervals = round(linspace(0, duration, (duration/required_resolution)+1)');
-            if raw_data_intervals(1) <= required_intervals(1) && raw_data_intervals(end) >= required_intervals(end)
+            raw_data_intervals = linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)';
+            required_intervals = linspace(0, duration, (duration/required_resolution)+1)';
+            if round(raw_data_intervals(1)) <= round(required_intervals(1)) && round(raw_data_intervals(end)) >= round(required_intervals(end))
                 interpolated_data = interp1 (raw_data_intervals, input_data, required_intervals, "spline");
                 %%    required_profile = [required_intervals interpolated_data];
                 required_profile = interpolated_data;
