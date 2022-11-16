@@ -84,6 +84,8 @@ while time_granted <= Wrapper.duration
              % Collect measurements from distribution networks
              if Wrapper.config_data.include_helics  
                  Wrapper = Wrapper.get_loads_from_helics();
+                 % FIXME: Add code for other dummy federates: Start
+                 % FIXME: Add code for other dummy federates: End                 
              end
              %*************************************************************
              Wrapper = Wrapper.run_power_flow(time_granted);  
@@ -91,6 +93,8 @@ while time_granted <= Wrapper.duration
              % Send Voltages from distribution networks
              if Wrapper.config_data.include_helics  
                  Wrapper = Wrapper.send_voltages_to_helics();
+                 % FIXME: Add code for other dummy federates: Start
+                 % FIXME: Add code for other dummy federates: End                 
              end
  
              tnext_physics_powerflow = tnext_physics_powerflow + Wrapper.config_data.physics_powerflow.interval;

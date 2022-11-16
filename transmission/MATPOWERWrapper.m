@@ -178,7 +178,7 @@ classdef MATPOWERWrapper
                kW_kVAR_factor = DSO_bid.constant_kW / DSO_bid.constant_kVAR;
                %***** Updating the responsive bus loads *****%
                Generator_index = size(obj.mpc.gen,1) + 1;
-               obj.mpc.genfuel(Generator_index,:) = obj.mpc.genfuel(1,:);  %copy random genfuel entry
+               % obj.mpc.genfuel(Generator_index,:) = obj.mpc.genfuel(1,:);  %copy random genfuel entry
                obj.mpc.gen(Generator_index,:) = 0;                             %new entry of 0's
                obj.mpc.gen(Generator_index,1) = Bus_number;                    %set bus # 
                obj.mpc.gen(Generator_index,5) = -1*max(DSO_bid.Q_bid)/kW_kVAR_factor; 
@@ -223,10 +223,10 @@ classdef MATPOWERWrapper
                obj.RT_allocations{Bus_number}.P_clear =  solution.bus(Bus_number,14); 
                obj.RT_allocations{Bus_number}.Q_clear =  solution.bus(Bus_number,3); 
                
-               obj.mpc.genfuel(Generator_index,:) = [];
+               % obj.mpc.genfuel(Generator_index,:) = [];
                obj.mpc.gen(Generator_index,:) = [];
                obj.mpc.gencost(Generator_index,:) = [];
-               solution.genfuel(Generator_index,:) = [];
+               % solution.genfuel(Generator_index,:) = [];
                solution.gen(Generator_index,:) = [];
                solution.gencost(Generator_index,:) = [];
       
@@ -344,7 +344,7 @@ classdef MATPOWERWrapper
            
            for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
                cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.sub_keys, strcat('.pcc.', mat2str(cosim_bus), '.pq'));
+               temp = strfind(obj.helics_data.sub_keys, strcat('/pcc.', mat2str(cosim_bus), '.pq'));
                subkey_idx = find(~cellfun(@isempty,temp));
                sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
                demand = helicsInputGetComplex(sub_object);
@@ -371,7 +371,7 @@ classdef MATPOWERWrapper
                cosim_bus_angle = obj.mpc.bus(cosim_bus, 9)*pi/180;
                [voltage_real, voltage_imag] = pol2cart(cosim_bus_angle, cosim_bus_voltage);
                 
-               temp = strfind(obj.helics_data.pub_keys, strcat('.pcc.', mat2str(cosim_bus), '.pnv'));
+               temp = strfind(obj.helics_data.pub_keys, strcat('pcc.', mat2str(cosim_bus), '.pnv'));
                pubkey_idx = find(~cellfun(@isempty,temp));
                pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
                helicsPublicationPublishComplex(pub_object, complex(voltage_real, voltage_imag));
@@ -390,7 +390,7 @@ classdef MATPOWERWrapper
            
            for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
                cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.sub_keys, strcat('.pcc.', mat2str(cosim_bus), '.rt_energy.bid'));
+               temp = strfind(obj.helics_data.sub_keys, strcat('/pcc.', mat2str(cosim_bus), '.rt_energy.bid'));
                subkey_idx = find(~cellfun(@isempty,temp));
                sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
                raw_bid = helicsInputGetString(sub_object);
@@ -412,7 +412,7 @@ classdef MATPOWERWrapper
            
            for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
                cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.pub_keys, strcat('.pcc.', mat2str(cosim_bus), '.rt_energy.cleared'));
+               temp = strfind(obj.helics_data.pub_keys, strcat('pcc.', mat2str(cosim_bus), '.lmp'));
                pubkey_idx = find(~cellfun(@isempty,temp));
                pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
                 
