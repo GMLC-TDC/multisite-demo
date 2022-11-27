@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# .NET bin and Obj folders
+bin/
+obj/ 

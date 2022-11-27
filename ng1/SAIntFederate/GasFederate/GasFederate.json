@@ -1,0 +1,26 @@
+{
+  "name": "GasFederate",
+  "log_level": 1,
+  "core_type": "tcp",
+  "period": 60,
+  "offset": 30,
+  "uninterruptible": false,
+  "terminate_on_error": true,
+  "wait_for_current_time_update": true,
+  "publications":[
+    {
+      "key":"GasFederate/pressure",
+      "type":"double",
+      "unit":"bar-g",
+      "global": true
+    }
+  ],
+  "subscriptions":[
+    {
+      "key":"ElectricFederate/power",
+      "type":"double",
+      "unit":"MW",
+      "global": true
+    }
+  ]
+}

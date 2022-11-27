@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Scenario xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="19c7d50a902a474bae0d7fa4f524c207" SceName="PCM001" SceType="DCUCOPF" SolverStatus="Solved" IniState="CMBSTEOPF" StartTime="2016-12-01T06:00:00" EndTime="2016-12-02T06:00:00" Comment="" NetType="ELECTRIC" NetName="ENET30" NetFilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\Demo\ENET30.enet" Version="3.2.7.0" TimeCreated="2022-11-08T11:35:51.6697683+01:00" TimeModified="2022-11-24T17:34:36.7213587+01:00" FilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\Demo\PCM001.esce" ChartStartTime="2016-12-01T06:00:00" ChartTimeStep="900" ChartEndTime="2016-12-02T06:00:00" TimeHRZ="3600" dT="900" TimeLA="0" dtLA="0" UsePrfStartTime="true" PrfStartTime="2016-12-01T06:00:00" AverageFlowPrf="false" eps="1E-07" kmax="50" kmaxcnstr="10" UseIVModel="false" SolverType="Gurobi" SolverModel="MIP" TimeLimit="3600" RelMipGap="0.001" AbsMipGap="1000000" dumpLP="false">
+  <SceEvents>
+    <SceEvent Active="true" Info="-" UID="8494f753cf264bbbacc307528bba71db" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="60" UnitName="MW" EvalType="NONE" ProfileName="DEMAND" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="9f2abcaaadc84199aa45ecd0c8a300bc" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="100" UnitName="MW" EvalType="NONE" ProfileName="DEMAND" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="3b9167f4a9dd4e5dba8f349c30ba7395" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="60" UnitName="MW" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="d8736b489aad4646b28f2d1149588d0d" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="100" UnitName="MW" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="e65441a3992e44f4a56d82a1daa72119" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="50" UnitName="MW" EvalType="NONE" ProfileName="DEMAND" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+  </SceEvents>
+  <SceProfiles>
+    <SceProfile UID="5ea8aa7268014eff99b65843f31ab6eb" TimeStep="1" Name="DEMAND" PrflType="Deterministic" InterpolationType="Cubic" DistributionType="Uniform" DurationType="Periodic" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="INF" MinVal="-INF" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="0.6" Deviation="0" />
+        <DATA Mean="0.8" Deviation="0" />
+        <DATA Mean="0.85" Deviation="0" />
+        <DATA Mean="0.9" Deviation="0" />
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="1.1" Deviation="0" />
+        <DATA Mean="1.2" Deviation="0" />
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="0.9" Deviation="0" />
+        <DATA Mean="0.9" Deviation="0" />
+        <DATA Mean="0.9" Deviation="0" />
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="1.2" Deviation="0" />
+        <DATA Mean="1.3" Deviation="0" />
+        <DATA Mean="1.3" Deviation="0" />
+        <DATA Mean="1.1" Deviation="0" />
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="0.8" Deviation="0" />
+        <DATA Mean="0.6" Deviation="0" />
+        <DATA Mean="0.5" Deviation="0" />
+        <DATA Mean="0.5" Deviation="0" />
+        <DATA Mean="0.5" Deviation="0" />
+        <DATA Mean="0.6" Deviation="0" />
+        <DATA Mean="0.6" Deviation="0" />
+      </PRFDATA>
+    </SceProfile>
+  </SceProfiles>
+</Scenario>

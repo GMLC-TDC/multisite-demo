@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Scenario xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="de56077a061049c582c6155d5062b18f" SceName="CASE1" SceType="QuasiDynamicACOPF" SolverStatus="Solved" IniState="CMBSTEOPF" StartTime="2016-12-01T06:00:00" EndTime="2016-12-02T06:00:00" Comment="" NetType="ELECTRIC" NetName="ENET30" NetFilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\ENET30.enet" Version="3.0.0.0" TimeCreated="2016-12-02T02:12:39.122037+01:00" TimeModified="2022-11-12T10:34:19.6288876+01:00" FilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\CASE1.esce" ChartStartTime="2016-12-01T06:00:00" ChartTimeStep="3600" ChartEndTime="2016-12-02T06:00:00" TimeHRZ="0" dT="900" TimeLA="NaN" dtLA="NaN" UsePrfStartTime="true" PrfStartTime="2016-12-01T06:00:00" AverageFlowPrf="false" eps="1E-05" kmax="50" kmaxcnstr="10" UseIVModel="false" SolverType="COIN" SolverModel="MIP" TimeLimit="3600" RelMipGap="0.001" AbsMipGap="1000000" dumpLP="false">
+  <SceEvents>
+    <SceEvent Active="true" Info="-" UID="166a3ed6100d41ea86dfb158f9fbb7e5" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="23.999999998924736" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="652a8a1abdf342b2982c48690b5dc522" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="6.9999999989344932" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="166a3ed6100d41ea86dfb158f9fbb7e5" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1.6" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="652a8a1abdf342b2982c48690b5dc522" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="2.5" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="99d26bd5089e4affa2fc56021d5416d1" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="9.9999999989274215" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="99d26bd5089e4affa2fc56021d5416d1" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="0.90000000000000013" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="d60b790f8336450ebd6b3721d376e97c" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="24.999999998925855" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="d60b790f8336450ebd6b3721d376e97c" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="0.7" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="7a77e9ac320d4b7299496e55cbead21a" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="8.99999999893292" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="7a77e9ac320d4b7299496e55cbead21a" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1.8000000000000003" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="27f2902e543c49c1ae05ccc99068fc7f" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="24.999999998937195" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="27f2902e543c49c1ae05ccc99068fc7f" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="30" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="774778a91da0429295422cc69d20446d" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="11.999999998938163" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="774778a91da0429295422cc69d20446d" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="10.9" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="8494f753cf264bbbacc307528bba71db" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="4.9999999989391748" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="8494f753cf264bbbacc307528bba71db" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1.2" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="dab9187ee1ce4fc6b2cda0a966e2a854" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="30" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="a29f05430c8f499b8e29151150ef7dd8" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="34.999999998912493" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="c4607caa843b49e8b4cb030059e637a3" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="29.999999998918884" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="eb05d5a114704dab88138784e621600d" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="7.9999999989257446" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="45267573753349de84ae0acdbd1d5476" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="23.999999998935444" UnitName="MW" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="45267573753349de84ae0acdbd1d5476" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1.7500000000000002" UnitName="MVAr" EvalType="NONE" ProfileName="DEMANDPRF" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="821c6f90bdef418eb8e54a531bb6a528" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="15.999999998935246" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="3b9167f4a9dd4e5dba8f349c30ba7395" StartTime="2016-12-01T06:00:00" Parameter="PSET" Value="14.999999998933042" UnitName="MW" EvalType="NONE" ProfileName="CONST" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="7b9218334a4b4ceb985b4d4d03747185" StartTime="2016-12-01T06:00:00" Parameter="OFF" Value="0" UnitName="NO" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+  </SceEvents>
+  <SceProfiles>
+    <SceProfile UID="531bf8968b4b4507ad14b69f041a98af" TimeStep="1" Name="DEMANDPRF" PrflType="Deterministic" InterpolationType="Linear" DistributionType="Uniform" DurationType="Periodic" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0.01" />
+        <DATA Mean="1.09" Deviation="0.01" />
+        <DATA Mean="1.14" Deviation="0.01" />
+        <DATA Mean="1.18" Deviation="0.01" />
+        <DATA Mean="1.16" Deviation="0.01" />
+        <DATA Mean="1.19" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.18" Deviation="0.01" />
+        <DATA Mean="1.18" Deviation="0.01" />
+        <DATA Mean="1.23" Deviation="0.01" />
+        <DATA Mean="1.27" Deviation="0.01" />
+        <DATA Mean="1.29" Deviation="0.01" />
+        <DATA Mean="1.27" Deviation="0.01" />
+        <DATA Mean="1.32" Deviation="0.01" />
+        <DATA Mean="1.3" Deviation="0.01" />
+        <DATA Mean="1.26" Deviation="0.01" />
+        <DATA Mean="1.16" Deviation="0.01" />
+        <DATA Mean="1.09" Deviation="0.01" />
+        <DATA Mean="0.96" Deviation="0.01" />
+        <DATA Mean="0.89" Deviation="0.01" />
+        <DATA Mean="0.86" Deviation="0.01" />
+        <DATA Mean="0.85" Deviation="0.01" />
+        <DATA Mean="0.87" Deviation="0.01" />
+        <DATA Mean="0.91" Deviation="0.01" />
+      </PRFDATA>
+    </SceProfile>
+    <SceProfile UID="83e28e8bd59f49fe9074bc706281f8f2" TimeStep="1" Name="WINDPRF" PrflType="Deterministic" InterpolationType="Linear" DistributionType="Normal" DurationType="Periodic" Sign="false" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="1.25" Deviation="0.125" />
+        <DATA Mean="1.15" Deviation="0.125" />
+        <DATA Mean="0.95" Deviation="0.125" />
+        <DATA Mean="1" Deviation="0.125" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0.5" Deviation="0" />
+        <DATA Mean="0.65" Deviation="0" />
+        <DATA Mean="0.45" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="0" Deviation="0" />
+        <DATA Mean="1" Deviation="0.125" />
+        <DATA Mean="1.1" Deviation="0.125" />
+        <DATA Mean="1.2" Deviation="0.125" />
+        <DATA Mean="0.85" Deviation="0.125" />
+        <DATA Mean="1" Deviation="0.125" />
+        <DATA Mean="1" Deviation="0" />
+      </PRFDATA>
+    </SceProfile>
+    <SceProfile UID="9b86b82982be4065bf6473492d497bd8" TimeStep="1" Name="CONST" PrflType="Deterministic" InterpolationType="Linear" DistributionType="Uniform" DurationType="Periodic" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0" />
+        <DATA Mean="1" Deviation="0" />
+      </PRFDATA>
+    </SceProfile>
+  </SceProfiles>
+</Scenario>

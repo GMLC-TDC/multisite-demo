@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<ElectricNet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="141e5308cf5947cfb3833a369d32f88a" ModelOrigin="Unknown" ModelName="ENET30" TimeCreated="2016-06-01T13:29:00.5301633+02:00" TimeModified="2022-11-24T10:25:07.7257031+01:00" Version="3.2.7.0" NodeSize="1.1" LineSize="2" Arrowsize="1" BaseS="100" BaseF="50" TFSize="1.2">
+  <Constraints />
+  <Nodes>
+    <Node xsi:type="ElectricNodeX" UID="4fff596db8224a678c3abd356586208c" Name="BUS000" Alias="" InService="true" Info="-" Visible="true" X="-27.58285999" Y="1.31992722" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="1267ed05b181476ea7a0ad0df7df141a" Name="BUS001" Alias="" InService="true" Info="-" Visible="true" X="-24.608097076416016" Y="1.3199281692504883" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.1" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="cde78507922f4ddea009aa63a53daf6c" Name="BUS002" Alias="" InService="true" Info="-" Visible="true" X="-27.607290267944336" Y="-0.23191165924072266" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="69bf71bb29ea4a65aa11b10a4905abb2" Name="BUS003" Alias="" InService="true" Info="-" Visible="true" X="-24.608098983764648" Y="-0.23191261291503906" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="86ef5e7ebc1a4cf9ad84be98d9627a5e" Name="BUS004" Alias="" InService="true" Info="-" Visible="true" X="-21.500177383422852" Y="1.2832822799682617" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="c704d0738aa444d0a1b90a0deba5f870" Name="BUS005" Alias="" InService="true" Info="-" Visible="true" X="-22.0344181060791" Y="-0.26855754852294922" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="fb68b94d00cb4dd7b62a7a015561efbf" Name="BUS006" Alias="" InService="true" Info="-" Visible="true" X="-18.9561767578125" Y="1.2832822799682617" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="cebeeaefc633431fbbd58ddb41647a6e" Name="BUS007" Alias="" InService="true" Info="-" Visible="true" X="-19.61018180847168" Y="-1.0362367630004883" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="47dcd22a36d74a9ea1a40962251c0706" Name="BUS008" Alias="" InService="true" Info="-" Visible="true" X="-22.023796081542969" Y="-2.1068272590637207" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="51fc5ce3b159438abc8ecd2cb863d9b7" Name="BUS009" Alias="" InService="true" Info="-" Visible="true" X="-18.865945816040039" Y="-3.4503159523010254" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="6fb198a5f3a64256bb9be5f38732dd51" Name="BUS010" Alias="" InService="true" Info="-" Visible="true" X="-23.175313949584961" Y="-2.0903372764587402" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="b4e3f413214245ac9f08455ee7871261" Name="BUS011" Alias="" InService="true" Info="-" Visible="true" X="-24.621864318847656" Y="-2.4863176345825195" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="7b9218334a4b4ceb985b4d4d03747185" Name="BUS012" Alias="" InService="true" Info="-" Visible="true" X="-27.623821258544922" Y="-2.4936728477478027" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.1" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="463da9738b224c7bafe1195c6f6ad445" Name="BUS013" Alias="" InService="true" Info="-" Visible="true" X="-26.716835021972656" Y="-4.4369750022888184" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="d4f8f511bf004728b707dae5e5cc14a0" Name="BUS014" Alias="" InService="true" Info="-" Visible="true" X="-24.595558166503906" Y="-5.920720100402832" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="958a1438078340ddb9c38d15c48fa7d4" Name="BUS015" Alias="" InService="true" Info="-" Visible="true" X="-23.251174926757813" Y="-4.487727165222168" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="3877468a069949da918744541e5a6f73" Name="BUS016" Alias="" InService="true" Info="-" Visible="true" X="-21.04656982421875" Y="-4.4756555557250977" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="04a8a20d6e2746e9860c7d26c3cfcf2c" Name="BUS017" Alias="" InService="true" Info="-" Visible="true" X="-23.349863052368164" Y="-5.920720100402832" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="391addd5061d45fc9b630f8abc3d8e0c" Name="BUS018" Alias="" InService="true" Info="-" Visible="true" X="-21.899784088134766" Y="-5.920720100402832" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="33465ebd22084912ab96030c5b758315" Name="BUS019" Alias="" InService="true" Info="-" Visible="true" X="-20.576902389526367" Y="-5.920720100402832" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="0c49405666cf4a1ea7f3da6cab48024c" Name="BUS020" Alias="" InService="true" Info="-" Visible="true" X="-17.531536102294922" Y="-4.2626357078552246" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="d4555a6258db450a8423641f96054160" Name="BUS021" Alias="" InService="true" Info="-" Visible="true" X="-18.851345062255859" Y="-5.3534846305847168" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.1" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="de48b9f0710c41728d7e8ce037c9d964" Name="BUS022" Alias="" InService="true" Info="-" Visible="true" X="-24.595724105834961" Y="-8.4842805862426758" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.1" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="47f31bf94b96496b8ad98d9cb3e69274" Name="BUS023" Alias="" InService="true" Info="-" Visible="true" X="-22.103303909301758" Y="-8.4901618957519531" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="d44aca7a58e34e4484ef97c3a4817f5f" Name="BUS024" Alias="" InService="true" Info="-" Visible="true" X="-19.711942672729492" Y="-8.4901618957519531" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="3be77ea8d89e4009b8292ada7f53855e" Name="BUS025" Alias="" InService="true" Info="-" Visible="true" X="-17.676742553710938" Y="-8.4901618957519531" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="c0f7baf8e73d4932b45a60a2fdf73cba" Name="BUS026" Alias="" InService="true" Info="-" Visible="true" X="-16.414642333984375" Y="-4.4355549812316895" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.1" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="9d21f63291bc43f8a07a02148ad474d0" Name="BUS027" Alias="" InService="true" Info="-" Visible="true" X="-17.982023239135742" Y="0.36296463012695313" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="a298c21f1cec429caa2ac9b6212921df" Name="BUS028" Alias="" InService="true" Info="-" Visible="true" X="-15.110969543457031" Y="-3.7949414253234863" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+    <Node xsi:type="ElectricNodeX" UID="b27c24ab49f5418b8f39e2aa6fe897ca" Name="BUS029" Alias="" InService="true" Info="-" Visible="true" X="-15.56983470916748" Y="-4.8945322036743164" ZoneName="ZONE1" H="0" Lat="0" Long="0" BaseV="135" VMAXDEF="1.05" VMINDEF="0.95">
+      <Groups />
+    </Node>
+  </Nodes>
+  <Externals>
+    <External xsi:type="FuelGeneratorX" UID="451d3b297c6344e49122c6cb1cc7245d" Name="BUS000" Alias="" InService="true" Info="-" Visible="true" X="-27.58285999" Y="1.31992722" Lat="0" Long="0" NodeUID="4fff596db8224a678c3abd356586208c" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="120" PMAXPRCDEF="10000" PMINDEF="15" PMINPRCDEF="100" QMAXDEF="48" QMINDEF="-36" GenType="GASTURBINE" PFSETDEF="1" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="3.75" C0DEF="65" C1DEF="3.75" C2DEF="0.06" FuelUID="0767d2dc63994750913eb6ec1b90d86f" HR0="12" HR1="0" HR2="0" EFFMAX="0.3" EFFMIN="0.3" FC0="20" FC1="250" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="FuelGeneratorX" UID="a6a59d7c8445422e9eb41c253ec55da0" Name="BUS001" Alias="" InService="true" Info="-" Visible="true" X="-24.608097076416016" Y="1.3199281692504883" Lat="0" Long="0" NodeUID="1267ed05b181476ea7a0ad0df7df141a" PSETDEF="0" PSETPRCDEF="INF" PMAXDEF="100" PMAXPRCDEF="INF" PMINDEF="25" PMINPRCDEF="100" QMAXDEF="80" QMINDEF="-60" GenType="GASTURBINE" PFSETDEF="1" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="1.125" C0DEF="55" C1DEF="1.125" C2DEF="0.01" FuelUID="2d2ddce796624c069c80aa80167517ba" HR0="14.4" HR1="0" HR2="0" EFFMAX="0.25" EFFMIN="0.25" FC0="60" FC1="200" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="8494f753cf264bbbacc307528bba71db" Name="BUS002" Alias="" InService="true" Info="-" Visible="true" X="-27.607290267944336" Y="-0.23191165924072266" Lat="0" Long="0" NodeUID="cde78507922f4ddea009aa63a53daf6c" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="8054faa52e20472eb5e7c08caec0f8fd" Name="BUS003" Alias="" InService="true" Info="-" Visible="true" X="-24.608098983764648" Y="-0.23191261291503906" Lat="0" Long="0" NodeUID="69bf71bb29ea4a65aa11b10a4905abb2" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricShuntX" UID="c93365dfc1974355b91d3ae02779975e" Name="BUS004" Alias="" InService="true" Info="-" Visible="true" X="-21.500177383422852" Y="1.2832822799682617" Lat="0" Long="0" NodeUID="86ef5e7ebc1a4cf9ad84be98d9627a5e" PSETDEF="NaN" PSETPRCDEF="NaN" PMAXDEF="NaN" PMAXPRCDEF="NaN" PMINDEF="NaN" PMINPRCDEF="NaN" QMAXDEF="NaN" QMINDEF="NaN" GSETDEF="0" BSETDEF="0.04">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="b6530812c60c47c4a5eeb467cf5a0ae5" Name="BUS005" Alias="" InService="true" Info="-" Visible="true" X="-22.0344181060791" Y="-0.26855754852294922" Lat="0" Long="0" NodeUID="c704d0738aa444d0a1b90a0deba5f870" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="774778a91da0429295422cc69d20446d" Name="BUS006" Alias="" InService="true" Info="-" Visible="true" X="-18.9561767578125" Y="1.2832822799682617" Lat="0" Long="0" NodeUID="fb68b94d00cb4dd7b62a7a015561efbf" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="27f2902e543c49c1ae05ccc99068fc7f" Name="BUS007" Alias="" InService="true" Info="-" Visible="true" X="-19.61018180847168" Y="-1.0362367630004883" Lat="0" Long="0" NodeUID="cebeeaefc633431fbbd58ddb41647a6e" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="6121e1b14cf84e2e810248632fbc5704" Name="BUS008" Alias="" InService="true" Info="-" Visible="true" X="-22.023796081542969" Y="-2.1068272590637207" Lat="0" Long="0" NodeUID="47dcd22a36d74a9ea1a40962251c0706" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="9f2abcaaadc84199aa45ecd0c8a300bc" Name="BUS009" Alias="" InService="true" Info="-" Visible="true" X="-18.865945816040039" Y="-3.4503159523010254" Lat="0" Long="0" NodeUID="51fc5ce3b159438abc8ecd2cb863d9b7" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="45267573753349de84ae0acdbd1d5476" Name="BUS010" Alias="" InService="true" Info="-" Visible="true" X="-23.175313949584961" Y="-2.0903372764587402" Lat="0" Long="0" NodeUID="6fb198a5f3a64256bb9be5f38732dd51" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="e65441a3992e44f4a56d82a1daa72119" Name="BUS011" Alias="" InService="true" Info="-" Visible="true" X="-24.621864318847656" Y="-2.4863176345825195" Lat="0" Long="0" NodeUID="b4e3f413214245ac9f08455ee7871261" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="FuelGeneratorX" UID="7775fa0aa1284a6d89f9ef660342b42f" Name="BUS012" Alias="" InService="true" Info="-" Visible="true" X="-27.623821258544922" Y="-2.4936728477478027" Lat="0" Long="0" NodeUID="7b9218334a4b4ceb985b4d4d03747185" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="50" PMAXPRCDEF="10000" PMINDEF="12.5" PMINPRCDEF="100" QMAXDEF="40" QMINDEF="-30" GenType="GASTURBINE" PFSETDEF="1" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="4.5" C0DEF="60" C1DEF="4.5" C2DEF="0.04" FuelUID="2d2ddce796624c069c80aa80167517ba" HR0="11.25" HR1="0" HR2="0" EFFMAX="0.32" EFFMIN="0.32" FC0="50" FC1="300" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="166a3ed6100d41ea86dfb158f9fbb7e5" Name="BUS013" Alias="" InService="true" Info="-" Visible="true" X="-26.716835021972656" Y="-4.4369750022888184" Lat="0" Long="0" NodeUID="463da9738b224c7bafe1195c6f6ad445" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="652a8a1abdf342b2982c48690b5dc522" Name="BUS014" Alias="" InService="true" Info="-" Visible="true" X="-24.595558166503906" Y="-5.920720100402832" Lat="0" Long="0" NodeUID="d4f8f511bf004728b707dae5e5cc14a0" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="7a77e9ac320d4b7299496e55cbead21a" Name="BUS015" Alias="" InService="true" Info="-" Visible="true" X="-23.251174926757813" Y="-4.487727165222168" Lat="0" Long="0" NodeUID="958a1438078340ddb9c38d15c48fa7d4" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="3b9167f4a9dd4e5dba8f349c30ba7395" Name="BUS016" Alias="" InService="true" Info="-" Visible="true" X="-21.04656982421875" Y="-4.4756555557250977" Lat="0" Long="0" NodeUID="3877468a069949da918744541e5a6f73" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="99d26bd5089e4affa2fc56021d5416d1" Name="BUS017" Alias="" InService="true" Info="-" Visible="true" X="-23.349863052368164" Y="-5.920720100402832" Lat="0" Long="0" NodeUID="04a8a20d6e2746e9860c7d26c3cfcf2c" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="eb05d5a114704dab88138784e621600d" Name="BUS018" Alias="" InService="true" Info="-" Visible="true" X="-21.899784088134766" Y="-5.920720100402832" Lat="0" Long="0" NodeUID="391addd5061d45fc9b630f8abc3d8e0c" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="d60b790f8336450ebd6b3721d376e97c" Name="BUS019" Alias="" InService="true" Info="-" Visible="true" X="-20.576902389526367" Y="-5.920720100402832" Lat="0" Long="0" NodeUID="33465ebd22084912ab96030c5b758315" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="821c6f90bdef418eb8e54a531bb6a528" Name="BUS020" Alias="" InService="true" Info="-" Visible="true" X="-17.531536102294922" Y="-4.2626357078552246" Lat="0" Long="0" NodeUID="0c49405666cf4a1ea7f3da6cab48024c" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="FuelGeneratorX" UID="73bf1949ed964b50b5ed5642f4f6b0fe" Name="BUS021" Alias="" InService="true" Info="-" Visible="true" X="-18.851345062255859" Y="-5.3534846305847168" Lat="0" Long="0" NodeUID="d4555a6258db450a8423641f96054160" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="120" PMAXPRCDEF="10000" PMINDEF="15" PMINPRCDEF="100" QMAXDEF="48" QMINDEF="-36" GenType="GASTURBINE" PFSETDEF="0" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="3.75" C0DEF="50" C1DEF="3.75" C2DEF="0.06" FuelUID="0767d2dc63994750913eb6ec1b90d86f" HR0="13.333333333333336" HR1="0" HR2="0" EFFMAX="0.27" EFFMIN="0.27" FC0="40" FC1="275" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="FuelGeneratorX" UID="a2a1189087f942e3b82c3b8d95b54191" Name="BUS022" Alias="" InService="true" Info="-" Visible="true" X="-24.595724105834961" Y="-8.4842805862426758" Lat="0" Long="0" NodeUID="de48b9f0710c41728d7e8ce037c9d964" PSETDEF="0" PSETPRCDEF="INF" PMAXDEF="60" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="100" QMAXDEF="48" QMINDEF="-36" GenType="GASTURBINE" PFSETDEF="1" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="1.05" C0DEF="55" C1DEF="1.05" C2DEF="0.003" FuelUID="2d2ddce796624c069c80aa80167517ba" HR0="8.9999999999999982" HR1="0" HR2="0" EFFMAX="0.4" EFFMIN="0.4" FC0="25" FC1="225" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricShuntX" UID="fa03e44f4cae496592319e1a6f20a185" Name="BUS023" Alias="" InService="true" Info="-" Visible="true" X="-22.103303909301758" Y="-8.4901618957519531" Lat="0" Long="0" NodeUID="47f31bf94b96496b8ad98d9cb3e69274" PSETDEF="NaN" PSETPRCDEF="NaN" PMAXDEF="NaN" PMAXPRCDEF="NaN" PMINDEF="NaN" PMINPRCDEF="NaN" QMAXDEF="NaN" QMINDEF="NaN" GSETDEF="0" BSETDEF="0.04">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="d8736b489aad4646b28f2d1149588d0d" Name="BUS024" Alias="" InService="true" Info="-" Visible="true" X="-19.711942672729492" Y="-8.4901618957519531" Lat="0" Long="0" NodeUID="d44aca7a58e34e4484ef97c3a4817f5f" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="dab9187ee1ce4fc6b2cda0a966e2a854" Name="BUS025" Alias="" InService="true" Info="-" Visible="true" X="-17.676742553710938" Y="-8.4901618957519531" Lat="0" Long="0" NodeUID="3be77ea8d89e4009b8292ada7f53855e" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="FuelGeneratorX" UID="ed22d3adda9b4b9c97ff517e1c815716" Name="BUS026" Alias="" InService="true" Info="-" Visible="true" X="-16.414642333984375" Y="-4.4355549812316895" Lat="0" Long="0" NodeUID="c0f7baf8e73d4932b45a60a2fdf73cba" PSETDEF="0" PSETPRCDEF="INF" PMAXDEF="115" PMAXPRCDEF="INF" PMINDEF="28.75" PMINPRCDEF="100" QMAXDEF="92" QMINDEF="-69" GenType="GASTURBINE" PFSETDEF="1" VMSETDEF="1" MaxUpRampDef="INF" MaxDownRampDef="INF" VOMPriceDef="1.1" C0DEF="30" C1DEF="1.1" C2DEF="0.01" FuelUID="2d2ddce796624c069c80aa80167517ba" HR0="10.285714285714286" HR1="0" HR2="0" EFFMAX="0.35" EFFMIN="0.35" FC0="50" FC1="240" FC2="0" NSEG="2" MinUpTimeDef="0" MinDownTimeDef="0" StartUpPriceDef="0" ShutDownPriceDef="0">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="5cf0c76050814f4cb68e6cf23b2030c9" Name="BUS027" Alias="" InService="true" Info="-" Visible="true" X="-17.982023239135742" Y="0.36296463012695313" Lat="0" Long="0" NodeUID="9d21f63291bc43f8a07a02148ad474d0" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="c4607caa843b49e8b4cb030059e637a3" Name="BUS028" Alias="" InService="true" Info="-" Visible="true" X="-15.110969543457031" Y="-3.7949414253234863" Lat="0" Long="0" NodeUID="a298c21f1cec429caa2ac9b6212921df" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+    <External xsi:type="ElectricDemandX" UID="a29f05430c8f499b8e29151150ef7dd8" Name="BUS029" Alias="" InService="true" Info="-" Visible="true" X="-15.56983470916748" Y="-4.8945322036743164" Lat="0" Long="0" NodeUID="b27c24ab49f5418b8f39e2aa6fe897ca" PSETDEF="0" PSETPRCDEF="2000" PMAXDEF="INF" PMAXPRCDEF="INF" PMINDEF="0" PMINPRCDEF="0" QMAXDEF="INF" QMINDEF="-INF" PWF="1" PWFType="ind">
+      <Groups />
+    </External>
+  </Externals>
+  <Branches>
+    <Branch xsi:type="ElectricLineX" UID="c9a68449f580401db6354e94028c368a" Name="LINE000" Alias="" InService="true" Info="" Visible="true" X="-26.095478057861328" Y="1.31992769241333" FromUID="4fff596db8224a678c3abd356586208c" ToUID="1267ed05b181476ea7a0ad0df7df141a" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.02" XXDEF="0.06" BBDEF="0.03" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="3d2b1380352b4276bac67c0e12605d27" Name="LINE001" Alias="" InService="true" Info="" Visible="true" X="-27.595073699951172" Y="0.54400777816772461" FromUID="4fff596db8224a678c3abd356586208c" ToUID="cde78507922f4ddea009aa63a53daf6c" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.05" XXDEF="0.19" BBDEF="0.02" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="56239d6f98e347fd8e652ea6cc8e249d" Name="LINE002" Alias="" InService="true" Info="" Visible="true" X="-24.608097076416016" Y="0.54400777816772461" FromUID="1267ed05b181476ea7a0ad0df7df141a" ToUID="69bf71bb29ea4a65aa11b10a4905abb2" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.06" XXDEF="0.17" BBDEF="0.02" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="0d91d69d20b84785a47752cbb0ade5ef" Name="LINE003" Alias="" InService="true" Info="" Visible="true" X="-26.107694625854492" Y="-0.23191213607788086" FromUID="cde78507922f4ddea009aa63a53daf6c" ToUID="69bf71bb29ea4a65aa11b10a4905abb2" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.01" XXDEF="0.04" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="6660f89aa0e849e992155655c2ab2dcc" Name="LINE004" Alias="" InService="true" Info="" Visible="true" X="-23.05413818359375" Y="1.301605224609375" FromUID="1267ed05b181476ea7a0ad0df7df141a" ToUID="86ef5e7ebc1a4cf9ad84be98d9627a5e" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.05" XXDEF="0.2" BBDEF="0.02" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="6507f7517d344d43ab00eaef11accde8" Name="LINE005" Alias="" InService="true" Info="" Visible="true" X="-23.321258544921875" Y="0.52568531036376953" FromUID="1267ed05b181476ea7a0ad0df7df141a" ToUID="c704d0738aa444d0a1b90a0deba5f870" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.06" XXDEF="0.18" BBDEF="0.02" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="b655e994d891406abd01258d7b37e668" Name="LINE006" Alias="" InService="true" Info="" Visible="true" X="-23.321258544921875" Y="-0.25023508071899414" FromUID="69bf71bb29ea4a65aa11b10a4905abb2" ToUID="c704d0738aa444d0a1b90a0deba5f870" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.01" XXDEF="0.04" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="264805bade79441ca5e42859f25c8029" Name="LINE007" Alias="" InService="true" Info="" Visible="true" X="-20.228176116943359" Y="1.2832822799682617" FromUID="86ef5e7ebc1a4cf9ad84be98d9627a5e" ToUID="fb68b94d00cb4dd7b62a7a015561efbf" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.05" XXDEF="0.12" BBDEF="0.01" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="3d7777ce2c264c079f5ead04cc39206d" Name="LINE008" Alias="" InService="true" Info="" Visible="true" X="-20.495296478271484" Y="0.50736236572265625" FromUID="c704d0738aa444d0a1b90a0deba5f870" ToUID="fb68b94d00cb4dd7b62a7a015561efbf" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.03" XXDEF="0.08" BBDEF="0.01" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="f3d074b13cc84fbdbdf19587cda3eacc" Name="LINE009" Alias="" InService="true" Info="" Visible="true" X="-20.822299957275391" Y="-0.65239715576171875" FromUID="c704d0738aa444d0a1b90a0deba5f870" ToUID="cebeeaefc633431fbbd58ddb41647a6e" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.01" XXDEF="0.04" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="074e23a110584628b4988859f08911b9" Name="LINE010" Alias="" InService="true" Info="" Visible="true" X="-22.029106140136719" Y="-1.187692403793335" FromUID="c704d0738aa444d0a1b90a0deba5f870" ToUID="47dcd22a36d74a9ea1a40962251c0706" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.21" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="3ae3f97edd5f42c8a444bb4ad8d3dea4" Name="LINE011" Alias="" InService="true" Info="" Visible="true" X="-20.45018196105957" Y="-1.8594367504119873" FromUID="c704d0738aa444d0a1b90a0deba5f870" ToUID="51fc5ce3b159438abc8ecd2cb863d9b7" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.56" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="5abc6e40e2f947778dffefb9264b5fb6" Name="LINE012" Alias="" InService="true" Info="" Visible="true" X="-22.599555969238281" Y="-2.0985822677612305" FromUID="47dcd22a36d74a9ea1a40962251c0706" ToUID="6fb198a5f3a64256bb9be5f38732dd51" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.21" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="04e904b1a1294a7ba60bd2a3b0c2041e" Name="LINE013" Alias="" InService="true" Info="" Visible="true" X="-20.444869995117188" Y="-2.778571605682373" FromUID="47dcd22a36d74a9ea1a40962251c0706" ToUID="51fc5ce3b159438abc8ecd2cb863d9b7" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.11" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="d678f17e31e74cf2acf609603ae0d96b" Name="LINE014" Alias="" InService="true" Info="" Visible="true" X="-24.614982604980469" Y="-1.3591151237487793" FromUID="69bf71bb29ea4a65aa11b10a4905abb2" ToUID="b4e3f413214245ac9f08455ee7871261" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.26" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="b701bddc36fb453aa2ee07cf0fcabcac" Name="LINE015" Alias="" InService="true" Info="" Visible="true" X="-26.122842788696289" Y="-2.4899952411651611" FromUID="b4e3f413214245ac9f08455ee7871261" ToUID="7b9218334a4b4ceb985b4d4d03747185" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.14" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e679d5766d374b00a5d952cd4a09a692" Name="LINE016" Alias="" InService="true" Info="" Visible="true" X="-25.669349670410156" Y="-3.4616463184356689" FromUID="b4e3f413214245ac9f08455ee7871261" ToUID="463da9738b224c7bafe1195c6f6ad445" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.12" XXDEF="0.26" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="1c5c24a6ff0d40e888ac4673c087d9d6" Name="LINE017" Alias="" InService="true" Info="" Visible="true" X="-24.608711242675781" Y="-4.2035188674926758" FromUID="b4e3f413214245ac9f08455ee7871261" ToUID="d4f8f511bf004728b707dae5e5cc14a0" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.07" XXDEF="0.13" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="59529a29724a4516b2dcd5d14d59a1f3" Name="LINE018" Alias="" InService="true" Info="" Visible="true" X="-23.936519622802734" Y="-3.4870223999023438" FromUID="b4e3f413214245ac9f08455ee7871261" ToUID="958a1438078340ddb9c38d15c48fa7d4" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.09" XXDEF="0.2" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="605df957870843878cec98fdb1023250" Name="LINE019" Alias="" InService="true" Info="" Visible="true" X="-25.656196594238281" Y="-5.1788473129272461" FromUID="463da9738b224c7bafe1195c6f6ad445" ToUID="d4f8f511bf004728b707dae5e5cc14a0" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.22" XXDEF="0.2" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="0dfe2a646b72405a9bef7bdaeef8378e" Name="LINE020" Alias="" InService="true" Info="" Visible="true" X="-22.148872375488281" Y="-4.4816913604736328" FromUID="958a1438078340ddb9c38d15c48fa7d4" ToUID="3877468a069949da918744541e5a6f73" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.08" XXDEF="0.19" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="d8d42bdffc654da5a546b5fdb8b753f1" Name="LINE021" Alias="" InService="true" Info="" Visible="true" X="-23.972709655761719" Y="-5.920720100402832" FromUID="d4f8f511bf004728b707dae5e5cc14a0" ToUID="04a8a20d6e2746e9860c7d26c3cfcf2c" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.11" XXDEF="0.22" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="9d0182f4c0a043ad986c38643a43d332" Name="LINE022" Alias="" InService="true" Info="" Visible="true" X="-22.624824523925781" Y="-5.920720100402832" FromUID="04a8a20d6e2746e9860c7d26c3cfcf2c" ToUID="391addd5061d45fc9b630f8abc3d8e0c" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.06" XXDEF="0.13" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="3073022dbd464a21a3a1d2044d8981d3" Name="LINE023" Alias="" InService="true" Info="" Visible="true" X="-21.23834228515625" Y="-5.920720100402832" FromUID="391addd5061d45fc9b630f8abc3d8e0c" ToUID="33465ebd22084912ab96030c5b758315" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.03" XXDEF="0.07" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="68765da02a1d48369a6cbb175503f838" Name="LINE024" Alias="" InService="true" Info="" Visible="true" X="-19.721424102783203" Y="-4.6855182647705078" FromUID="51fc5ce3b159438abc8ecd2cb863d9b7" ToUID="33465ebd22084912ab96030c5b758315" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.09" XXDEF="0.21" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="99c8567a191b45f9b1ba8194445184f9" Name="LINE025" Alias="" InService="true" Info="" Visible="true" X="-19.956256866455078" Y="-3.9629857540130615" FromUID="51fc5ce3b159438abc8ecd2cb863d9b7" ToUID="3877468a069949da918744541e5a6f73" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.03" XXDEF="0.08" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e064045900ce4389a6e01cbf301218d2" Name="LINE026" Alias="" InService="true" Info="" Visible="true" X="-18.198741912841797" Y="-3.856475830078125" FromUID="51fc5ce3b159438abc8ecd2cb863d9b7" ToUID="0c49405666cf4a1ea7f3da6cab48024c" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.03" XXDEF="0.07" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e0bf3ad3e98b467987cb33f24b5531db" Name="LINE027" Alias="" InService="true" Info="" Visible="true" X="-18.858646392822266" Y="-4.4019002914428711" FromUID="51fc5ce3b159438abc8ecd2cb863d9b7" ToUID="d4555a6258db450a8423641f96054160" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.07" XXDEF="0.15" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="ca4785fa71be443b86a64fefcf5b1c31" Name="LINE028" Alias="" InService="true" Info="" Visible="true" X="-18.191440582275391" Y="-4.8080601692199707" FromUID="0c49405666cf4a1ea7f3da6cab48024c" ToUID="d4555a6258db450a8423641f96054160" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.01" XXDEF="0.02" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e1024342206946dd95a54b67015abf8c" Name="LINE029" Alias="" InService="true" Info="" Visible="true" X="-24.59564208984375" Y="-7.2025003433227539" FromUID="d4f8f511bf004728b707dae5e5cc14a0" ToUID="de48b9f0710c41728d7e8ce037c9d964" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.1" XXDEF="0.2" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="026011fb6bc74b1eab8c8d983c50de6f" Name="LINE030" Alias="" InService="true" Info="" Visible="true" X="-20.477325439453125" Y="-6.9218235015869141" FromUID="d4555a6258db450a8423641f96054160" ToUID="47f31bf94b96496b8ad98d9cb3e69274" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.12" XXDEF="0.18" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="0082fca7c1324586b974cab5f4eca295" Name="LINE031" Alias="" InService="true" Info="" Visible="true" X="-23.349514007568359" Y="-8.4872207641601563" FromUID="de48b9f0710c41728d7e8ce037c9d964" ToUID="47f31bf94b96496b8ad98d9cb3e69274" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.13" XXDEF="0.27" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="a851983812a64a9cbd57d61481650ab4" Name="LINE032" Alias="" InService="true" Info="" Visible="true" X="-20.907623291015625" Y="-8.4901618957519531" FromUID="47f31bf94b96496b8ad98d9cb3e69274" ToUID="d44aca7a58e34e4484ef97c3a4817f5f" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.19" XXDEF="0.33" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="0db394c815e04a5a98bfde6f250b598f" Name="LINE033" Alias="" InService="true" Info="" Visible="true" X="-18.694343566894531" Y="-8.4901618957519531" FromUID="d44aca7a58e34e4484ef97c3a4817f5f" ToUID="3be77ea8d89e4009b8292ada7f53855e" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.25" XXDEF="0.38" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="d97477408e5742fe829b1d4aeda586c8" Name="LINE034" Alias="" InService="true" Info="" Visible="true" X="-18.06329345703125" Y="-6.4628582000732422" FromUID="d44aca7a58e34e4484ef97c3a4817f5f" ToUID="c0f7baf8e73d4932b45a60a2fdf73cba" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.11" XXDEF="0.21" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="d4fa13548dec47e2a2edf6d2181a88ec" Name="LINE035" Alias="" InService="true" Info="" Visible="true" X="-17.198333740234375" Y="-2.0362951755523682" FromUID="9d21f63291bc43f8a07a02148ad474d0" ToUID="c0f7baf8e73d4932b45a60a2fdf73cba" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0" XXDEF="0.4" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e01057f6dfd74230a01c00db9dc53f0a" Name="LINE036" Alias="" InService="true" Info="" Visible="true" X="-15.762805938720703" Y="-4.1152482032775879" FromUID="c0f7baf8e73d4932b45a60a2fdf73cba" ToUID="a298c21f1cec429caa2ac9b6212921df" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.22" XXDEF="0.42" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="4226cc9b67c1428785082c45bb5ebe59" Name="LINE037" Alias="" InService="true" Info="" Visible="true" X="-15.992238998413086" Y="-4.665043830871582" FromUID="c0f7baf8e73d4932b45a60a2fdf73cba" ToUID="b27c24ab49f5418b8f39e2aa6fe897ca" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.32" XXDEF="0.6" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="bdef4a4809f84a90967b2e8415d7aeee" Name="LINE038" Alias="" InService="true" Info="" Visible="true" X="-15.340402603149414" Y="-4.3447370529174805" FromUID="a298c21f1cec429caa2ac9b6212921df" ToUID="b27c24ab49f5418b8f39e2aa6fe897ca" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.24" XXDEF="0.45" BBDEF="0" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="916d6632e0c04f57a2b7707792dde7a8" Name="LINE039" Alias="" InService="true" Info="" Visible="true" X="-18.796102523803711" Y="-0.33663606643676758" FromUID="cebeeaefc633431fbbd58ddb41647a6e" ToUID="9d21f63291bc43f8a07a02148ad474d0" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.06" XXDEF="0.2" BBDEF="0.02" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="ElectricLineX" UID="e3ffeedf53aa4a7fb610ad65335f7abd" Name="LINE040" Alias="" InService="true" Info="" Visible="true" X="-20.008220672607422" Y="0.047203540802001953" FromUID="c704d0738aa444d0a1b90a0deba5f870" ToUID="9d21f63291bc43f8a07a02148ad474d0" SubName="SUB1" SymbolFillColorARGB="-65536" DrawLine="false" N="1" CalcImp="false" RRDEF="0.02" XXDEF="0.06" BBDEF="0.01" GGDEF="0" IMAXDEF="INF" PMAXDEF="800" PMAXPRCDEF="INF" PMAXREVDEF="INF" PMAXREVPRCDEF="INF" SMAXDEF="100" RRL="0" XXL="0" CCL="0" GGL="0" L="10000">
+      <Groups />
+    </Branch>
+  </Branches>
+  <Subs>
+    <Sub xsi:type="ElectricSub" UID="f9c8b0e1dcf142e188d895f995f771ef" Name="SUB1" />
+  </Subs>
+  <Zones>
+    <Zone xsi:type="ElectricZone" UID="e6f6dbf664de451683ffc03dce6fadcf" Name="ZONE1" />
+  </Zones>
+  <Groups />
+  <Fuels>
+    <Fuel xsi:type="FuelX" UID="0767d2dc63994750913eb6ec1b90d86f" Name="CCGT" Alias="" InService="true" Info="-" FuelUnit="[m³]" CV="0" FuelPriceDef="0.2" CO2="0" SO2="0" NOX="0">
+      <Groups />
+    </Fuel>
+    <Fuel xsi:type="FuelX" UID="2d2ddce796624c069c80aa80167517ba" Name="GASTURBINE" Alias="" InService="true" Info="-" FuelUnit="[m³]" CV="0" FuelPriceDef="0.2" CO2="0" SO2="0" NOX="0">
+      <Groups />
+    </Fuel>
+  </Fuels>
+  <HydroPlants />
+  <AncillaryServices />
+  <WindTurbinePowerCurves />
+</ElectricNet>

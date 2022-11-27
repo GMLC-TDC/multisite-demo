@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Scenario xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="d5a121a9036c49b0b1bee96119e86c9b" SceName="CASE1" SceType="DynamicGas" SolverStatus="Solved" IniState="CMBSTEOPF" StartTime="2016-12-01T06:00:00" EndTime="2016-12-02T06:00:00" Comment="" NetType="GAS" NetName="GNET25" NetFilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\GNET25.gnet" Version="3.0.0.0" TimeCreated="2016-12-03T02:13:30.4180306+01:00" TimeModified="2022-11-12T10:29:21.881018+01:00" FilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\CASE1.gsce" ChartStartTime="2016-12-01T06:00:00" ChartTimeStep="3600" ChartEndTime="2016-12-02T06:00:00" TimeHRZ="0" dT="900" TimeLA="NaN" dtLA="NaN" UsePrfStartTime="true" PrfStartTime="2016-12-01T06:00:00" AverageFlowPrf="false" eps="1E-05" kmax="50" kmaxcnstr="10" UseIVModel="false" SolverType="Xpress" SolverModel="MIP" TimeLimit="3600" RelMipGap="0.001" AbsMipGap="1000000" dumpLP="false">
+  <SceEvents>
+    <SceEvent Active="true" Info="-" UID="e15a40f742ad4b44b4a94cdb438bd266" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1" UnitName="sm3_s" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="67954fb2d02548e0a0ce6e4e0e45b473" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="41.666666666666664" UnitName="sm3_s" EvalType="NONE" ProfileName="PROFILE1" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="af8d3b43408a4d39b05e98b304de1a43" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1" UnitName="sm3_s" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="0f5e9e3d5e4843a0b39df46b3854bd70" StartTime="2016-12-01T06:00:00" Parameter="QSET" Value="1" UnitName="sm3_s" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="6d3a924e3bd244f88c72df028a56b022" StartTime="2016-12-01T06:00:00" Parameter="LPREF" Value="0" UnitName="sm3" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+    <SceEvent Active="true" Info="-" UID="6d3a924e3bd244f88c72df028a56b022" StartTime="2016-12-01T06:00:00" Parameter="HTON" Value="0" UnitName="NO" EvalType="NONE" ProfileName="" UsePrfStartTime="false" PrfStartTime="2016-12-01T06:00:00" InterpolatePrf="true" AveragePrf="false" />
+  </SceEvents>
+  <SceProfiles>
+    <SceProfile UID="bddf0a76e30d42b89503be9c822be7fc" TimeStep="1" Name="PROFILE1" PrflType="Deterministic" InterpolationType="Cubic" DistributionType="Uniform" DurationType="Periodic" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0.01" />
+        <DATA Mean="1.025" Deviation="0.01" />
+        <DATA Mean="1.125" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.25" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.125" Deviation="0.01" />
+        <DATA Mean="1.115" Deviation="0.01" />
+        <DATA Mean="1.1" Deviation="0.01" />
+        <DATA Mean="1.15" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.15" Deviation="0.01" />
+        <DATA Mean="1.25" Deviation="0.01" />
+        <DATA Mean="1.45" Deviation="0.01" />
+        <DATA Mean="1.5" Deviation="0.01" />
+        <DATA Mean="1.45" Deviation="0.01" />
+        <DATA Mean="1.35" Deviation="0.01" />
+        <DATA Mean="1.275" Deviation="0.01" />
+        <DATA Mean="1.225" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.1" Deviation="0.01" />
+        <DATA Mean="1.05" Deviation="0.01" />
+        <DATA Mean="1" Deviation="0.01" />
+      </PRFDATA>
+    </SceProfile>
+    <SceProfile UID="4636b8ae5ba4492b97a3ca574d4a0176" TimeStep="6" Name="PROFILE2" PrflType="Deterministic" InterpolationType="Linear" DistributionType="Normal" DurationType="Constant" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0.01" />
+        <DATA Mean="0.5" Deviation="0.01" />
+        <DATA Mean="0.5" Deviation="0" />
+        <DATA Mean="0.5" Deviation="0" />
+      </PRFDATA>
+    </SceProfile>
+    <SceProfile UID="19223e92dc6a48ef8718cbcdf5a11f77" TimeStep="1" Name="PROFILE3" PrflType="Deterministic" InterpolationType="Linear" DistributionType="Exponential" DurationType="Stop" Sign="true" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0.01" />
+        <DATA Mean="1.025" Deviation="0.01" />
+        <DATA Mean="1.125" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.25" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.125" Deviation="0.01" />
+        <DATA Mean="1.115" Deviation="0.01" />
+        <DATA Mean="1.1" Deviation="0.01" />
+        <DATA Mean="1.15" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.2" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.15" Deviation="0.01" />
+        <DATA Mean="1.25" Deviation="0.01" />
+        <DATA Mean="1.45" Deviation="0.01" />
+        <DATA Mean="1.5" Deviation="0.01" />
+        <DATA Mean="1.45" Deviation="0.01" />
+        <DATA Mean="1.35" Deviation="0.01" />
+        <DATA Mean="1.275" Deviation="0.01" />
+        <DATA Mean="1.225" Deviation="0.01" />
+        <DATA Mean="1.175" Deviation="0.01" />
+        <DATA Mean="1.1" Deviation="0.01" />
+        <DATA Mean="1.05" Deviation="0.01" />
+        <DATA Mean="1" Deviation="0.01" />
+      </PRFDATA>
+    </SceProfile>
+    <SceProfile UID="f97b505cc4b4470cb0725788f419948c" TimeStep="4" Name="PRFL" PrflType="Stochastic" InterpolationType="Linear" DistributionType="Normal" DurationType="Periodic" Sign="false" DevAtMean="true" DevAtMin="true" DevAtMax="true" UseBounds="false" UseBaseDev="false" MaxVal="1E+20" MinVal="-1E+20" BaseDev="0" DataSource="" UseSource="false" Info="-">
+      <PRFDATA>
+        <DATA Mean="1" Deviation="0.5" />
+        <DATA Mean="1.2" Deviation="0.5" />
+        <DATA Mean="0.8" Deviation="0.5" />
+        <DATA Mean="1" Deviation="0.5" />
+      </PRFDATA>
+    </SceProfile>
+  </SceProfiles>
+</Scenario>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<HubSystem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="1e260450da7245c8b93d2cecbf4f9cd3" ModelOrigin="SAInt_API" ModelName="Demo" TimeCreated="2022-05-27T17:17:55.7443398+02:00" TimeModified="2022-11-06T00:09:15.8995586+01:00" Version="3.0.0.0" ENETName="ENET30" GNETName="GNET25">
+  <Networks>
+    <Network UID="141e5308cf5947cfb3833a369d32f88a" Name="ENET30" NetType="ELECTRIC" FilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\ENET30.enet" />
+    <Network UID="6d3a924e3bd244f88c72df028a56b022" Name="GNET25" NetType="GAS" FilePath="C:\Users\GetnetAyele\source\repos\SAInt_HELICS_interface\HelicsDotNet\Networks\DemoCase\WI_4746\GNET25.gnet" />
+    <Network NetType="NONE" />
+    <Network NetType="NONE" />
+  </Networks>
+  <Hubs>
+    <Hub xsi:type="GasFiredGeneratorX" UID="b3bfbc1125f64d53938ac3f73680458a" Name="BUS001_N15" Alias="" InService="true" Info="-" Visible="true" X="0" Y="0">
+      <Connections>
+        <Connection UID="a6a59d7c8445422e9eb41c253ec55da0" Name="BUS001" ObjType="FGEN" />
+        <Connection UID="e15a40f742ad4b44b4a94cdb438bd266" Name="N15" ObjType="GDEM" />
+      </Connections>
+      <DefaultCharts />
+    </Hub>
+    <Hub xsi:type="GasFiredGeneratorX" UID="d1a2122d82504ef1bb20eda8cda5c05b" Name="BUS022_N20" Alias="" InService="true" Info="-" Visible="true" X="0" Y="0">
+      <Connections>
+        <Connection UID="a2a1189087f942e3b82c3b8d95b54191" Name="BUS022" ObjType="FGEN" />
+        <Connection UID="0f5e9e3d5e4843a0b39df46b3854bd70" Name="N20" ObjType="GDEM" />
+      </Connections>
+      <DefaultCharts />
+    </Hub>
+    <Hub xsi:type="GasFiredGeneratorX" UID="c6fc130b478949ab93882a3949a2158c" Name="BUS026_N21" Alias="" InService="true" Info="-" Visible="true" X="0" Y="0">
+      <Connections>
+        <Connection UID="ed22d3adda9b4b9c97ff517e1c815716" Name="BUS026" ObjType="FGEN" />
+        <Connection UID="af8d3b43408a4d39b05e98b304de1a43" Name="N21" ObjType="GDEM" />
+      </Connections>
+      <DefaultCharts />
+    </Hub>
+  </Hubs>
+</HubSystem>

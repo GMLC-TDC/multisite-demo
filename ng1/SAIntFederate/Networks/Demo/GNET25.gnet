@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<GasNet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UID="6d3a924e3bd244f88c72df028a56b022" ModelOrigin="Unknown" ModelName="GNET25" TimeCreated="2016-12-03T16:12:40.3266212+01:00" TimeModified="2022-11-12T10:29:22.437742+01:00" Version="3.0.0.0" NodeSize="1.1" LineSize="2" Arrowsize="2.143589" CSSize="1.2" CVSize="1.1" VASize="1.1" RESize="1.1" Pn="101325" Tn="273.15" visc="1E-05" kappa="1.3" PAMB="101325" TAMBDEF="288.15" Z_1="-0.0027" Z_2="7E-05" Pz_b="3000000">
+  <Constraints />
+  <Nodes>
+    <Node xsi:type="GasNodeX" UID="ccd6aacfde8a4d4e8a9b4bdb4cabe8af" Name="N00" Alias="" InService="true" Info="-" Visible="true" X="-2.5" Y="4.1" ZoneName="ZONE1" H="50" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="2101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="ec550ed6ae8e4f049f99e72650488960" Name="N01" Alias="" InService="true" Info="-" Visible="true" X="-0.10000000149011612" Y="2" ZoneName="ZONE1" H="100" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="61cc1779dcb440c69991cd76627e56b4" Name="N02" Alias="" InService="true" Info="-" Visible="true" X="-0.10000000149011612" Y="1.2000000476837158" ZoneName="ZONE1" H="100" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="955f1d71d38e41abb6097641c12de610" Name="N03" Alias="" InService="true" Info="-" Visible="true" X="4.4000000953674316" Y="2" ZoneName="ZONE1" H="150" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="f86b999d1dd1479096cfefc11a9c1d72" Name="N04" Alias="" InService="true" Info="-" Visible="true" X="-3.7999999523162842" Y="-2" ZoneName="ZONE1" H="125" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="f7ad39b9b904496c9b2ecc808a2b9594" Name="N05" Alias="" InService="true" Info="-" Visible="true" X="5" Y="2" ZoneName="ZONE1" H="150" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="425deff4d29e465b88fe46c0b91f4a2f" Name="N06" Alias="" InService="true" Info="-" Visible="true" X="-6" Y="-2" ZoneName="ZONE1" H="110" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="b0a4a8ccd9614f7da4b28f863e491fd3" Name="N07" Alias="" InService="true" Info="-" Visible="true" X="0" Y="-4.1999998092651367" ZoneName="ZONE1" H="75" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="8b6e6a9b0e394a5e824b8952a4d70738" Name="N08" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-3" ZoneName="ZONE1" H="50" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="2601325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="8abc68b3abd9445887e53f7c19e17318" Name="N09" Alias="" InService="true" Info="-" Visible="true" X="5" Y="4" ZoneName="ZONE1" H="40" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="5eb925e30a5b4fa483012a6a057636be" Name="N10" Alias="" InService="true" Info="-" Visible="true" X="-7" Y="-3" ZoneName="ZONE1" H="70" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="2101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="78e8b0033f284dca90fd5cc1bbf5304d" Name="N11" Alias="" InService="true" Info="-" Visible="true" X="-7" Y="-1" ZoneName="ZONE1" H="300" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="1701324.9999999998" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="5c4122f9bd5d4611903626b63e51f5b7" Name="N12" Alias="" InService="true" Info="-" Visible="true" X="0" Y="-5" ZoneName="ZONE1" H="75" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="70fe4707f2ec45a0936a33c33afc4edd" Name="N13" Alias="" InService="true" Info="-" Visible="true" X="-1.5" Y="-6.5" ZoneName="ZONE1" H="120" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="c3d4c28ab3704ba594fe838e17044804" Name="N14" Alias="" InService="true" Info="-" Visible="true" X="-0.10000000149011612" Y="-8.1000003814697266" ZoneName="ZONE1" H="215" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="1701324.9999999998" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="2c1d8a79a4f9485793a76ae57b505359" Name="N15" Alias="" InService="true" Info="-" Visible="true" X="-3.0999999046325684" Y="-8.1000003814697266" ZoneName="ZONE1" H="45" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="e99a54c2d4764737bb2a36a98dca1edc" Name="N16" Alias="" InService="true" Info="-" Visible="true" X="4" Y="5" ZoneName="ZONE1" H="50" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="2601325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="ab6d93f304fe4bd7b94b8e46b391dd38" Name="N17" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-5" ZoneName="ZONE1" H="60" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="6595bf3496754807947af77e194e857b" Name="N18" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-5.5999999046325684" ZoneName="ZONE1" H="60" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="abdf0a559664469f825f779d31bc2007" Name="N19" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-7" ZoneName="ZONE1" H="170" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="73a4204379c04321b13093ff83df2352" Name="N20" Alias="" InService="true" Info="-" Visible="true" X="4" Y="-8.1000003814697266" ZoneName="ZONE1" H="160" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="1888cea475f44eee81fa990f309a28ef" Name="N21" Alias="" InService="true" Info="-" Visible="true" X="6" Y="-8" ZoneName="ZONE1" H="150" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="9501f5a1cb554c2f96a023f9ac7ce8eb" Name="N22" Alias="" InService="true" Info="-" Visible="true" X="7" Y="-3" ZoneName="ZONE1" H="140" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="2101325" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="a39725033b5243fdbebc5a09cecf8fb0" Name="N23" Alias="" InService="true" Info="-" Visible="true" X="7" Y="4" ZoneName="ZONE1" H="110" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="3101324.9999999995" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+    <Node xsi:type="GasNodeX" UID="d83b0a967fe74eeda1e5fe91fd90e775" Name="N24" Alias="" InService="true" Info="-" Visible="true" X="7" Y="0.5" ZoneName="ZONE1" H="80" Lat="0" Long="0" PMAXDEF="6101324.9999999991" PMAXPRCDEF="1000" PMINDEF="1701324.9999999998" PMINPRCDEF="1000">
+      <Groups />
+    </Node>
+  </Nodes>
+  <Externals>
+    <External xsi:type="GasSupplyX" UID="988089d71e574ad1a46cd42669b5449b" Name="N00" Alias="" InService="true" Info="-" Visible="true" X="-2.5" Y="4.1" Lat="0" Long="0" NodeUID="ccd6aacfde8a4d4e8a9b4bdb4cabe8af" QMAXDEF="277.77777777777777" QMAXPRCDEF="INF" SQSETNAME="DEFAULT">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="1d5765fa0ff84c7ca17f3337f96e73d9" Name="N04" Alias="" InService="true" Info="-" Visible="true" X="-3.7999999523162842" Y="-2" Lat="0" Long="0" NodeUID="f86b999d1dd1479096cfefc11a9c1d72" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="2d16e38bf485451c966b557edc62a127" Name="N08" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-3" Lat="0" Long="0" NodeUID="8b6e6a9b0e394a5e824b8952a4d70738" QMAXDEF="0.069444444444444448" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="LNGTerminalX" UID="6e58ce264d154026b517ae11372456dd" Name="N10" Alias="" InService="true" Info="-" Visible="true" X="-7" Y="-3" Lat="0" Long="0" NodeUID="5eb925e30a5b4fa483012a6a057636be" QMAXDEF="150" QMAXPRCDEF="INF" SQSETNAME="DEFAULT" dLNG="587" VESMAX="10" DIS="375" INVMAX="300000000">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="205410473abc4e949915e0a466b68d0f" Name="N11" Alias="" InService="true" Info="-" Visible="true" X="-7" Y="-1" Lat="0" Long="0" NodeUID="78e8b0033f284dca90fd5cc1bbf5304d" QMAXDEF="1.1111111111111112" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="dfe7c227bf7044a6915dc82e564278ba" Name="N14" Alias="" InService="true" Info="-" Visible="true" X="-0.10000000149011612" Y="-8.1000003814697266" Lat="0" Long="0" NodeUID="c3d4c28ab3704ba594fe838e17044804" QMAXDEF="0.069444444444444448" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="e15a40f742ad4b44b4a94cdb438bd266" Name="N15" Alias="" InService="true" Info="-" Visible="false" X="-3.0999999046325684" Y="-8.1000003814697266" Lat="0" Long="0" NodeUID="2c1d8a79a4f9485793a76ae57b505359" QMAXDEF="5.5555555555555554" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="f0a8a09d813547978ceb5458374090c7" Name="N16" Alias="" InService="true" Info="-" Visible="true" X="4" Y="5" Lat="0" Long="0" NodeUID="e99a54c2d4764737bb2a36a98dca1edc" QMAXDEF="0.066666666666666666" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="20eb1db7909e41a0b578d87ba70905f1" Name="N18" Alias="" InService="true" Info="-" Visible="true" X="5" Y="-5.5999999046325684" Lat="0" Long="0" NodeUID="6595bf3496754807947af77e194e857b" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="0f5e9e3d5e4843a0b39df46b3854bd70" Name="N20" Alias="" InService="true" Info="-" Visible="true" X="4" Y="-8.1000003814697266" Lat="0" Long="0" NodeUID="73a4204379c04321b13093ff83df2352" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="af8d3b43408a4d39b05e98b304de1a43" Name="N21" Alias="" InService="true" Info="-" Visible="true" X="6" Y="-8" Lat="0" Long="0" NodeUID="1888cea475f44eee81fa990f309a28ef" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasStorageX" UID="9cf8c4bb635a4314be6861e8a694d6dc" Name="N22" Alias="" InService="true" Info="-" Visible="true" X="7" Y="-3" Lat="0" Long="0" NodeUID="9501f5a1cb554c2f96a023f9ac7ce8eb" QMAXDEF="150" QMAXPRCDEF="INF" SQSETNAME="DEFAULT" StorageType="Depleted" WDRMAX="83.333333333333329" INJMAX="62.5" INJMIN="41.666666666666664" WDRMIN="41.666666666666664" INVINJ="0.40000000596046448" INVWDR="0.5" INVMAX="250000000">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="11ed332001d14f22995a0c187cad80b2" Name="N23" Alias="" InService="true" Info="-" Visible="true" X="7" Y="4" Lat="0" Long="0" NodeUID="a39725033b5243fdbebc5a09cecf8fb0" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+    <External xsi:type="GasDemandX" UID="67954fb2d02548e0a0ce6e4e0e45b473" Name="N24" Alias="" InService="true" Info="-" Visible="true" X="7" Y="0.5" Lat="0" Long="0" NodeUID="d83b0a967fe74eeda1e5fe91fd90e775" QMAXDEF="150" QMAXPRCDEF="INF">
+      <Groups />
+    </External>
+  </Externals>
+  <Branches>
+    <Branch xsi:type="GasPipeX" UID="a9dbf3174ffe49adb622626bd6a6dde3" Name="PI00" Alias="" InService="true" Info="" Visible="true" X="-1.2999999523162842" Y="3.0499999523162842" FromUID="ccd6aacfde8a4d4e8a9b4bdb4cabe8af" ToUID="ec550ed6ae8e4f049f99e72650488960" SubName="NORTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.89999997615814209" WTH="0.002" L="100000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="9895b59cd05047e699694d7a6db0f42c" Name="PI01" Alias="" InService="true" Info="" Visible="true" X="2.1500000953674316" Y="2" FromUID="ec550ed6ae8e4f049f99e72650488960" ToUID="955f1d71d38e41abb6097641c12de610" SubName="NORTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.89999997615814209" WTH="0.002" L="80000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="db982be1bbea499daae7e2de8ff17d5d" Name="PI02" Alias="" InService="true" Info="" Visible="true" X="-1.9499999284744263" Y="-0.39999997615814209" FromUID="61cc1779dcb440c69991cd76627e56b4" ToUID="f86b999d1dd1479096cfefc11a9c1d72" SubName="WEST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="50000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="4ddd656c7a124a25b44e78c8e8f3d701" Name="PI03" Alias="" InService="true" Info="" Visible="true" X="-4.9000000953674316" Y="-2" FromUID="f86b999d1dd1479096cfefc11a9c1d72" ToUID="425deff4d29e465b88fe46c0b91f4a2f" SubName="WEST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="20000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="f5efd1ee642c4782a981755d3b72a3e0" Name="PI04" Alias="" InService="true" Info="" Visible="true" X="-6.5" Y="-1.5" FromUID="425deff4d29e465b88fe46c0b91f4a2f" ToUID="78e8b0033f284dca90fd5cc1bbf5304d" SubName="WEST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="10000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="b787ca830b1d44ebb423574a874d6472" Name="PI05" Alias="" InService="true" Info="" Visible="true" X="-6.5" Y="-2.5" FromUID="425deff4d29e465b88fe46c0b91f4a2f" ToUID="5eb925e30a5b4fa483012a6a057636be" SubName="WEST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="15000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="9b76c868d8eb45cdab315c9773f4daac" Name="PI06" Alias="" InService="true" Info="" Visible="true" X="-1.8999999761581421" Y="-3.0999999046325684" FromUID="f86b999d1dd1479096cfefc11a9c1d72" ToUID="b0a4a8ccd9614f7da4b28f863e491fd3" SubName="WEST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="60000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="e1e4d18d10ca44a3b4a9dfc25e6be765" Name="PI07" Alias="" InService="true" Info="" Visible="true" X="5" Y="3" FromUID="f7ad39b9b904496c9b2ecc808a2b9594" ToUID="8abc68b3abd9445887e53f7c19e17318" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="30000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="8d0d0f0e566a4ab08b8b4ee5de897025" Name="PI08" Alias="" InService="true" Info="" Visible="true" X="6" Y="4" FromUID="8abc68b3abd9445887e53f7c19e17318" ToUID="a39725033b5243fdbebc5a09cecf8fb0" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="30000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="492be067df27435b8ac4bd935d8862b7" Name="PI09" Alias="" InService="true" Info="" Visible="true" X="7" Y="2.25" FromUID="a39725033b5243fdbebc5a09cecf8fb0" ToUID="d83b0a967fe74eeda1e5fe91fd90e775" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="50000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="e7d8c34c91914f3e8e38dbf5d91489e8" Name="PI10" Alias="" InService="true" Info="" Visible="true" X="7" Y="-1.25" FromUID="d83b0a967fe74eeda1e5fe91fd90e775" ToUID="9501f5a1cb554c2f96a023f9ac7ce8eb" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="40000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="41fa033da195434483e58ff2a50dd3f0" Name="PI11" Alias="" InService="true" Info="" Visible="true" X="6" Y="-3" FromUID="9501f5a1cb554c2f96a023f9ac7ce8eb" ToUID="8b6e6a9b0e394a5e824b8952a4d70738" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="60000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="212bca8730a14650a0d5c04601abf00c" Name="PI12" Alias="" InService="true" Info="" Visible="true" X="5" Y="-4" FromUID="8b6e6a9b0e394a5e824b8952a4d70738" ToUID="ab6d93f304fe4bd7b94b8e46b391dd38" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="60000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="cf0c757d4c46482c8d60776291fbea20" Name="PI13" Alias="" InService="true" Info="" Visible="true" X="-0.75" Y="-5.75" FromUID="5c4122f9bd5d4611903626b63e51f5b7" ToUID="70fe4707f2ec45a0936a33c33afc4edd" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="40000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="117f0c1b2b4b4dcd87f144f953432f2c" Name="PI14" Alias="" InService="true" Info="" Visible="true" X="-2.2999999523162842" Y="-7.3000001907348633" FromUID="70fe4707f2ec45a0936a33c33afc4edd" ToUID="2c1d8a79a4f9485793a76ae57b505359" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="25000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="58a70e9c337643d5b28a43c074fcd70b" Name="PI15" Alias="" InService="true" Info="" Visible="true" X="-0.800000011920929" Y="-7.3000001907348633" FromUID="70fe4707f2ec45a0936a33c33afc4edd" ToUID="c3d4c28ab3704ba594fe838e17044804" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="20000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="5692ab7037d247d4b38943b179834dc1" Name="PI16" Alias="" InService="true" Info="" Visible="true" X="1.9500000476837158" Y="-8.1000003814697266" FromUID="c3d4c28ab3704ba594fe838e17044804" ToUID="73a4204379c04321b13093ff83df2352" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="50000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="6e87b37220274c6f9211b4886e827652" Name="PI17" Alias="" InService="true" Info="" Visible="true" X="5" Y="-6.3000001907348633" FromUID="6595bf3496754807947af77e194e857b" ToUID="abdf0a559664469f825f779d31bc2007" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="60000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="157d8dd788ca4a0b8fd986386f9435a8" Name="PI18" Alias="" InService="true" Info="" Visible="true" X="4.5" Y="-7.5500001907348633" FromUID="abdf0a559664469f825f779d31bc2007" ToUID="73a4204379c04321b13093ff83df2352" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="30000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="148be25d4c4b4ea5881a845e8cb3aa8d" Name="PI19" Alias="" InService="true" Info="" Visible="true" X="5.5" Y="-7.5" FromUID="abdf0a559664469f825f779d31bc2007" ToUID="1888cea475f44eee81fa990f309a28ef" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="40000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="52c5f8466814494a93b0ce9c48942050" Name="PI20" Alias="" InService="true" Info="" Visible="true" X="4.5" Y="4.5" FromUID="8abc68b3abd9445887e53f7c19e17318" ToUID="e99a54c2d4764737bb2a36a98dca1edc" SubName="EAST" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.30000001192092896" WTH="0.002" L="30000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="accd3e8e9baf41538673b7905c9bf97d" Name="PI21" Alias="" InService="true" Info="" Visible="true" X="2.5" Y="-5" FromUID="5c4122f9bd5d4611903626b63e51f5b7" ToUID="ab6d93f304fe4bd7b94b8e46b391dd38" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.89999997615814209" WTH="0.002" L="100000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasPipeX" UID="c87d00fb82f54abe99bb142c1a7edbb0" Name="PI22" Alias="" InService="true" Info="" Visible="true" X="5" Y="-5.3000001907348633" FromUID="ab6d93f304fe4bd7b94b8e46b391dd38" ToUID="6595bf3496754807947af77e194e857b" SubName="SOUTH" SymbolFillColorARGB="-16777216" DrawLine="false" D="0.60000002384185791" WTH="0.002" L="50000" RO="1.2000000424450263E-05" HTC="0.24" EFF="1">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasCompressorX" UID="b40c3135f629420eadd46101b110a77e" Name="CS0" Alias="" InService="true" Info="" Visible="true" X="-0.10000000149011612" Y="1.6000000238418579" FromUID="ec550ed6ae8e4f049f99e72650488960" ToUID="61cc1779dcb440c69991cd76627e56b4" SubName="WEST" SymbolFillColorARGB="-23296" DrawLine="false" D="0.60000002384185791" QMAXDEF="277.77777777777777" QMAXPRCDEF="INF" QVOLMAXDEF="50" QVOLMAXPRCDEF="1000" PIMINDEF="2601325" PIMINPRCDEF="1000" POMAXDEF="7101324.9999999991" POMAXPRCDEF="INF" ExtrFuel="false" VMAXDEF="60" VMAXPRCDEF="1000" EFFHADDEF="0.77999997138977051" EFFMECHDEF="0.89999997615814209" PRMAXDEF="2.5" PRMAXPRCDEF="INF" POWDMAXDEF="50000000" POWDMAXPRCDEF="INF" POWSMAXDEF="50000000" POWSMAXPRCDEF="INF">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasCompressorX" UID="c4330e23430a4e4f9404d5fbabc865e1" Name="CS1" Alias="" InService="true" Info="" Visible="true" X="4.6999998092651367" Y="2" FromUID="955f1d71d38e41abb6097641c12de610" ToUID="f7ad39b9b904496c9b2ecc808a2b9594" SubName="EAST" SymbolFillColorARGB="-23296" DrawLine="false" D="0.60000002384185791" QMAXDEF="111.11111111111111" QMAXPRCDEF="INF" QVOLMAXDEF="50" QVOLMAXPRCDEF="1000" PIMINDEF="2601325" PIMINPRCDEF="1000" POMAXDEF="6101324.9999999991" POMAXPRCDEF="INF" ExtrFuel="false" VMAXDEF="60" VMAXPRCDEF="1000" EFFHADDEF="0.75999999046325684" EFFMECHDEF="0.87999999523162842" PRMAXDEF="2" PRMAXPRCDEF="INF" POWDMAXDEF="40000000" POWDMAXPRCDEF="INF" POWSMAXDEF="40000000" POWSMAXPRCDEF="INF">
+      <Groups />
+    </Branch>
+    <Branch xsi:type="GasCompressorX" UID="ede0bc866d0946abb81adae96dc6c2bb" Name="CS2" Alias="" InService="true" Info="" Visible="true" X="0" Y="-4.5999999046325684" FromUID="b0a4a8ccd9614f7da4b28f863e491fd3" ToUID="5c4122f9bd5d4611903626b63e51f5b7" SubName="SOUTH" SymbolFillColorARGB="-23296" DrawLine="false" D="0.60000002384185791" QMAXDEF="166.66666666666666" QMAXPRCDEF="INF" QVOLMAXDEF="50" QVOLMAXPRCDEF="1000" PIMINDEF="2101325" PIMINPRCDEF="1000" POMAXDEF="6101324.9999999991" POMAXPRCDEF="INF" ExtrFuel="false" VMAXDEF="60" VMAXPRCDEF="1000" EFFHADDEF="0.79000002145767212" EFFMECHDEF="0.9100000262260437" PRMAXDEF="2.5" PRMAXPRCDEF="INF" POWDMAXDEF="45000000" POWDMAXPRCDEF="INF" POWSMAXDEF="45000000" POWSMAXPRCDEF="INF">
+      <Groups />
+    </Branch>
+  </Branches>
+  <Subs>
+    <Sub xsi:type="GasSub" UID="21fae848d29144b7916fc68ea2422b36" Name="NORTH" />
+    <Sub xsi:type="GasSub" UID="ed56834c64ac4c9891915cbc19906ec8" Name="WEST" />
+    <Sub xsi:type="GasSub" UID="16d72a348c304d49bdd10e293b8451db" Name="EAST" />
+    <Sub xsi:type="GasSub" UID="049c22f7d0c142ea8e65e0d5ab1a4aaf" Name="SOUTH" />
+  </Subs>
+  <Zones>
+    <Zone xsi:type="GasZone" UID="48533588286a4b2eae5c376d046cdb0b" Name="ZONE1" />
+  </Zones>
+  <Groups />
+  <DefQual UID="c915c753facd487b87c427c4f3450445" Name="DEFAULT">
+    <Components>
+      <Component UID="a5ecbf4234894172869e7a4f81184e2d" X="100" />
+    </Components>
+  </DefQual>
+  <SupQuals />
+  <Components>
+    <Component ShortName="C1" RHOr="0.553921263974919" Name="Methane" M="0.016043" GCV="39761984.4212881" NCV="35831099.4178699" PC="4598800" TC="190.555" UID="a5ecbf4234894172869e7a4f81184e2d" />
+  </Components>
+  <ZEQN>PAPAY</ZEQN>
+  <LAMBDAEQN>HOFER</LAMBDAEQN>
+</GasNet>
