@@ -1,6 +1,6 @@
 {
     "name": "transmission",
-    "core_type": "zmq",
+    "core_type": "tcp",
     "log_level": "warning",
     "period": 1,
     "uninterruptible": false,
