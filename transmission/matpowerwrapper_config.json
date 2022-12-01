@@ -24,16 +24,17 @@
   "include_real_time_market": true, 
   "include_day_ahead_market": false, 
   "include_helics": true, 
-  "cosimulation_bus": [13],
   "physics_powerflow":{
     "type": "DC",
-    "interval": 60
+    "interval": 60,
+    "cosimulation_bus": [13]
   }, 
   "real_time_market":{
     "type": "DC",
     "interval": 300, 
     "transactive": true,
-	"bid_model": "Polynomial"
+    "cosimulation_bus": [13],
+	  "bid_model": "Polynomial"
   }, 
   "day_ahead_market":{
     "type": "DC",
