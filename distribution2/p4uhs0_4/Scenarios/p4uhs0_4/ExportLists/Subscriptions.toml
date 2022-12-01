@@ -6,3 +6,21 @@ Subscribe = true
 "Data type" = "vector"
 Multiplier = 2.510218561694025e-5
 index = 0
+
+["Load.load_cs_83-9599601_homelevel118ac"]
+Property = ["kW", "kvar",]
+"Subscription ID" = "beam_to_pydss_fed/Load.83-9599601_homelevel118ac"
+Unit = "kva"
+Subscribe = true
+"Data type" = "vector"
+Multiplier = [ 1, 1,]
+index = [ 0, 1,]
+
+["Load.load_cs_104-7400096_homelevel118ac"]
+Property = ["kW", "kvar",]
+"Subscription ID" = "beam_to_pydss_fed/Load.104-7400096_homelevel118ac"
+Unit = "kva"
+Subscribe = true
+"Data type" = "vector"
+Multiplier = [ 1, 1,]
+index = [ 0, 1,]
