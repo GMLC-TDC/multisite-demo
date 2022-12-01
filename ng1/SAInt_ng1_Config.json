@@ -3,7 +3,7 @@
   "name": "ng1",
   "core_type": "zmq",
   "log_level": "warning",
-  "period": 0,
+  "period": 1,
   "uninterruptible": false,
   "terminate_on_error": true,
   "strict_input_type_checking": true,
@@ -21,12 +21,12 @@
   ],
   "subscriptions": [
     {
-      "key": "node.6.requested",
+      "key": "transmission/node.6.requested",
       "type": "double",
       "unit": "MW"
     },
     {
-      "key": "node.8.requested",
+      "key": "transmission/node.8.requested",
       "type": "double",
       "unit": "MW"
     }
