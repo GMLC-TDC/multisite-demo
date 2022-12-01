@@ -1,0 +1,42 @@
+{
+  "__comment__": "this says not to use a default broker",
+  "broker":false,
+  "federates":[
+    {
+      "__comment__": "this is a broker, right now set with local ip",
+      "directory":".",
+      "exec":"helics_broker -t zmq_ss -f 4 --localinterface=127.0.0.1:23404 --localport 23404 --debugging",
+      "host":"localhost",
+      "name":"gemini_broker_127.0.0.1"
+    },
+    {
+      "__comment__": "play federate plays a BEAM recording instead of running BEAM",
+      "directory":".",
+      "exec":"python beam_player_federate.py mini_recording.txt 127.0.0.1",
+      "host":"localhost",
+      "name":"beamFederate"
+    },    
+    {
+      "__comment__": "instead of running PyDSS it runs a dummy distirubition federate",
+      "directory":".",
+      "exec":"python dummy_dist_federate.py 127.0.0.1",
+      "host":"localhost",
+      "name":"distribution_2"
+    },
+    {
+      "__comment__": "if there are multiple feeders then they all connect to subtransmission, which is what connects to transmission at the larger co-sim",
+      "directory":".",
+      "exec":"python subtransmission_federate.py 127.0.0.1 distribution_2",
+      "host":"localhost",
+      "name":"subtrans_federate"
+    },
+    {
+      "__comment__": "to get the recording into the correct format for pydss to read, there is an intermediate, beam_to_pydss_federate",
+      "directory":".",
+      "exec":"python beam_to_pydss_federate.py mini_station_bus_pairs.csv 127.0.0.1",
+      "host":"localhost",
+      "name":"beam_to_pydss_fed"
+    }
+  ],
+  "name":"gemini_dummy_federation"
+}

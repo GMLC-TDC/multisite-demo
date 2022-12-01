@@ -1,0 +1,4 @@
+New Line.line_bus_cs_83-9599601_homelevel118ac Units=km Length=4.25110685066118e-05 bus1=p4ulv39.1 bus2=bus_cs_83-9599601_homelevel118ac.1 switch=n enabled=y Linecode=1P_UG_AL_1/0_Brenau_2
+New Load.load_cs_83-9599601_homelevel118ac conn=wye bus1=bus_cs_83-9599601_homelevel118ac kV=0.120 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=.001 kvar=0.0002 Phases=1
+New Line.line_bus_cs_104-7400096_homelevel118ac Units=km Length=4.25483517748368e-05 bus1=p4ulv32.1 bus2=bus_cs_104-7400096_homelevel118ac.1 switch=n enabled=y Linecode=1P_UG_AL_1/0_Brenau_2
+New Load.load_cs_104-7400096_homelevel118ac conn=wye bus1=bus_cs_104-7400096_homelevel118ac kV=0.120 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=.001 kvar=0.0002 Phases=1

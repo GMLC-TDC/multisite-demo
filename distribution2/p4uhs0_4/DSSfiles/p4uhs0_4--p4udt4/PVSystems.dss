@@ -1,0 +1,4 @@
+New PVSystem.pv_load_p4ulv10 bus1=p4ulv10.1.2 phases=1 kV=0.24 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 irradiance=1 yearly=SFO_37.8067_-122.4322_45_225
+New PVSystem.pv_load_p4ulv34 bus1=p4ulv34.1.2 phases=1 kV=0.24 kVA=90.90909090909089 Pmpp=100.0 %Cutout=0.1 %Cutin=0.1 Model=1 irradiance=1 yearly=SFO_37.8067_-122.4322_15_180
+New PVSystem.pv_load_p4ulv6 bus1=p4ulv6.1.2 phases=1 kV=0.24 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 irradiance=1 yearly=SFO_37.8067_-122.4322_25_90
+
