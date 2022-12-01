@@ -270,7 +270,7 @@ classdef MATPOWERWrapper
                     obj.config_data.helics_config.subscriptions = [obj.config_data.helics_config.subscriptions subscription];
                 end
             end
-                %%%%%%%%%%%%%%%%% Creating Pubs & Subs for real time market %%%%%%%%%%%%%%%%%%    
+                %%%%%%%%%%%%%%%%% Creating Pubs & Subs for real time market %%%%%%%%%%%%%%%%%% 
             for i = 1:length(obj.config_data.real_time_market.cosimulation_bus)   
                 if obj.config_data.include_real_time_market
                     publication.key =   strcat (obj.config_data.helics_config.name, '.pcc.', mat2str(cosim_bus), '.rt_energy.cleared');
@@ -390,7 +390,7 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+           for bus_idx = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
                cosim_bus = obj.config_data.real_time_market.cosimulation_bus(bus_idx);
                temp = strfind(obj.helics_data.sub_keys, strcat('/pcc.', mat2str(cosim_bus), '.rt_energy.bid'));
                subkey_idx = find(~cellfun(@isempty,temp));
@@ -412,7 +412,7 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+           for bus_idx = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
                cosim_bus = obj.config_data.real_time_market.cosimulation_bus(bus_idx);
                temp = strfind(obj.helics_data.pub_keys, strcat('pcc.', mat2str(cosim_bus), '.lmp'));
                pubkey_idx = find(~cellfun(@isempty,temp));
