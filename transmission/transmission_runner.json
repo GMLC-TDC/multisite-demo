@@ -1,0 +1,11 @@
+{
+  "name": "transmission_runner",
+  "federates": [
+    {
+      "directory": ".",
+      "exec": "python -u transmission_dummy.py",
+      "host": "localhost",
+      "name": "transmission_dummy"
+	}
+  ]
+}
