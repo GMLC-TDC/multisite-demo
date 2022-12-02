@@ -44,7 +44,7 @@ def create_value_federate(fedinitstring,name,period):
     h.helicsFederateInfoSetCoreInitString(fedinfo, fedinitstring)
     h.helicsFederateInfoSetIntegerProperty(fedinfo, h.helics_property_int_log_level, 1)
     h.helicsFederateInfoSetTimeProperty(fedinfo, h.helics_property_time_period, period)
-    logger.info('Federate parameters set, create federate....')
+    logger.info('Federate parameters set, creating federate....')
     fed = h.helicsCreateValueFederate(name, fedinfo)
     logger.info('...and federate is created.')
     return fed
@@ -74,14 +74,14 @@ if __name__ == "__main__":
 	logger.debug(f'Requesting time {requested_time}')
 	grantedtime = h.helicsFederateRequestTime (fed, requested_time)
 	logger.debug(f'Granted time {grantedtime}')
-	h.helicsPublicationPublisString(pubid, 'test_message')
+	h.helicsPublicationPublishString(pubid, 'test_message')
 	logger.debug('Published "test_message"')
 
 	requested_time = 2
 	logger.debug(f'Requesting time {requested_time}')
 	grantedtime = h.helicsFederateRequestTime (fed, requested_time)
 	logger.debug(f'Granted time {grantedtime}')
-	sub_message = h.helicsInputGetstring(subid)
+	sub_message = h.helicsInputGetString(subid)
 	logger.debug(f'Got subscription message {sub_message}.')
     
 	destroy_federate(fed)
