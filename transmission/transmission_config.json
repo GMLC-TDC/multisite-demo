@@ -1,8 +1,9 @@
 {
     "name": "transmission",
-    "core_type": "zmq",
+    "core_type": "zmq_ss",
     "log_level": "warning",
     "period": 1,
+    "broker_address": "10.81.10.102",
     "uninterruptible": false,
     "terminate_on_error": true,
     "strict_input_type_checking": true,
