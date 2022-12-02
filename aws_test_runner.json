@@ -1,0 +1,12 @@
+{
+  "name": "aws_broker_test",
+  "broker": false,
+  "federates": [
+    {
+      "directory": ".",
+      "exec": "python -u aws_broker_tester.py",
+      "host": "localhost",
+      "name": "aws_broker_tester"
+    }
+  ]
+}
