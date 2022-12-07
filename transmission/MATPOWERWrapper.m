@@ -150,8 +150,10 @@ classdef MATPOWERWrapper
            
            if isempty(obj.results.PF)
                obj.results.PF(1).VM = [time solution.bus(:, 8)'];
+               obj.results.PF(1).VA = [time solution.bus(:, 9)'];
            else
                obj.results.PF.VM = [obj.results.PF.VM; time solution.bus(:, 8)'];
+               obj.results.PF.VA = [obj.results.PF.VA; time solution.bus(:, 9)'];
            end       
        end
        
