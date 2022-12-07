@@ -247,7 +247,6 @@ if __name__ == "__main__":
     granted_time = 0
     max_iterations = 10
 
-
     fed.enter_executing_mode()
     logger.info("Entered HELICS execution mode")
 
@@ -260,7 +259,8 @@ if __name__ == "__main__":
         granted_time = fed.request_time(requested_time)
         logger.debug(f"Granted time {granted_time}")
         
-        v = fed.subscriptions['pcc.2.pnv'].double
+        v = fed.subscriptions['transmission/pcc.2.pnv'].complex
+        v = abs(v)
         if v > 1.12 or v < 0.0:
             v = 12470
         
