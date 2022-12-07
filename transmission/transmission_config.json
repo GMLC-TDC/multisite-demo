@@ -45,8 +45,7 @@
         },
         {
             "key": "pcc.13.lmp",
-            "type": "double",
-            "unit": "$/MWh"
+            "type": "JSON"
         },
         {
             "key": "pcc.14.pnv",
