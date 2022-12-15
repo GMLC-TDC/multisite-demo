@@ -131,3 +131,6 @@ dmypy.json
 # .NET bin and Obj folders
 bin/
 obj/ 
+.vs/
+Outputs/
+Demo/

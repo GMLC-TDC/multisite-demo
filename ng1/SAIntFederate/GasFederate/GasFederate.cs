@@ -96,7 +96,7 @@ namespace SAInt_GasFederate
             FileStream ostrm;
             StreamWriter writer;
             TextWriter oldOut = Console.Out;
-            ostrm = new FileStream(outputfolder + "Log_gas_federate.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            ostrm = new FileStream(OutputFolder + "Log_gas_federate.txt", FileMode.OpenOrCreate, FileAccess.Write);
             writer = new StreamWriter(ostrm);
             Console.SetOut(writer);
 #endif
