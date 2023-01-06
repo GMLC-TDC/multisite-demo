@@ -27,7 +27,7 @@
   "physics_powerflow":{
     "type": "DC",
     "interval": 60,
-    "cosimulation_bus": [13]
+    "cosimulation_bus": [2, 13]
   }, 
   "real_time_market":{
     "type": "DC",
