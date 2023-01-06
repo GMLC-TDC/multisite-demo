@@ -1,11 +1,14 @@
 {
-  "name": "transmission_runner",
-  "federates": [
-    {
-      "directory": ".",
-      "exec": "python -u transmission_dummy.py",
-      "host": "localhost",
-      "name": "transmission_dummy"
-	}
-  ]
+	"name": "transmission_runner",
+	"federates": [{
+		"directory": "C:\\Users\\vasi189\\OneDrive - PNNL\\Documents\\MyCode\\multisite-demo\\multisite-demo\\distribution3\\",
+		"exec": "python -u demo_DSO.py",
+		"host": "localhost",
+		"name": "demo_DSO"
+	}, {
+		"directory": "C:\\Users\\vasi189\\OneDrive - PNNL\\Documents\\MyCode\\multisite-demo\\multisite-demo\\transmission\\",
+		"exec": "C:\\Program` Files\\MATLAB\\R2020b\\bin\\matlab.exe -batch 'transmission';",
+		"host": "localhost",
+		"name": "transmission_dummy"
+	}]
 }
