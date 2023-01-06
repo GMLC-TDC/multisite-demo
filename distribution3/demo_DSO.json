@@ -1,5 +1,5 @@
 {
-    "coreType": "zmq",
+    "coreType": "zmq_ss",
     "name": "distribution3",
     "period": 1,
     "timeDelta": 0.0,
