@@ -23,6 +23,7 @@
   "include_physics_powerflow": true,
   "include_real_time_market": true, 
   "include_day_ahead_market": false, 
+  "include_natural_gas": true, 
   "include_helics": true, 
   "physics_powerflow":{
     "type": "DC",
@@ -40,5 +41,9 @@
     "type": "DC",
     "interval": 86400, 
     "transactive": true
-    }
+   }, 
+  "natural_gas":{
+    "cosimulation_bus": [2]
+   }
+
 }

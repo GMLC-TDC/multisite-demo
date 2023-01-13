@@ -75,6 +75,10 @@ while time_granted <= Wrapper.duration
                 Wrapper = Wrapper.send_allocations_to_helics();
             end
             
+            if (Wrapper.config_data.include_helics) && (Wrapper.config_data.include_natural_gas)
+                Wrapper = Wrapper.send_requests_to_natural_gas_generators();
+            end
+            
             tnext_real_time_market = tnext_real_time_market + Wrapper.config_data.real_time_market.interval;
     end
     
@@ -85,6 +89,9 @@ while time_granted <= Wrapper.duration
              if Wrapper.config_data.include_helics  
                  Wrapper = Wrapper.get_loads_from_helics();
                  % FIXME: Add code for other dummy federates: Start
+                 if (Wrapper.config_data.include_helics) && (Wrapper.config_data.include_natural_gas)
+                     Wrapper = Wrapper.get_generation_from_natural_gas_generators();
+                 end
                  % FIXME: Add code for other dummy federates: End                 
              end
              %*************************************************************

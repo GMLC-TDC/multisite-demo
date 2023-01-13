@@ -359,7 +359,7 @@ classdef MATPOWERWrapper
            end 
     
        end
-       
+	   
        %% Send updated Voltages to Cosimulation
        function obj = send_voltages_to_helics(obj)
            %% Importing the HELICS Libraries %%
@@ -382,7 +382,7 @@ classdef MATPOWERWrapper
                fprintf('Wrapper: Sending Voltages %d+%d to Cosim bus %d\n', voltage_real, voltage_imag, cosim_bus);
            end
        end
-            
+	   
        %% Get Bids from Cosimulation
        function obj = get_bids_from_helics(obj)
            %% Importing the HELICS Libraries %%
@@ -442,6 +442,50 @@ classdef MATPOWERWrapper
                end          
            end
            
+       end
+	   
+       %% Updating loads from Cosimulation 
+       function obj = get_generation_from_natural_gas_generators(obj)
+    
+           %% Importing the HELICS Libraries %%
+           if obj.octave
+               helics; 
+           else
+               import helics.*
+           end
+           
+           for bus_idx = 1 : length(obj.config_data.natural_gas.cosimulation_bus)
+               cosim_bus = obj.config_data.natural_gas.cosimulation_bus(bus_idx);
+               temp = strfind(obj.helics_data.sub_keys, strcat('/node.', mat2str(cosim_bus), '.avail'));
+               subkey_idx = find(~cellfun(@isempty,temp));
+               sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
+               generation = helicsInputGetComplex(sub_object);
+               fprintf('Wrapper: Got Load %d+%d from Cosim bus %d\n', real(generation), 0, cosim_bus);
+                
+               obj.mpc.bus(cosim_bus, 3) = real(generation);
+           end 
+    
+       end
+	   
+        %% Send updated Voltages to Cosimulation
+       function obj = send_requests_to_natural_gas_generators(obj)
+           %% Importing the HELICS Libraries %%
+           if obj.octave
+               helics; 
+           else
+               import helics.*
+           end
+           
+           for bus_idx = 1 : length(obj.config_data.natural_gas.cosimulation_bus)
+               cosim_bus = obj.config_data.natural_gas.cosimulation_bus(bus_idx);
+               cosim_bus_real_power = solution.bus(cosim_bus, 3);
+                
+               temp = strfind(obj.helics_data.pub_keys, strcat('node.', mat2str(cosim_bus), '.requested'));
+               pubkey_idx = find(~cellfun(@isempty,temp));
+               pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
+               helicsPublicationPublishComplex(pub_object, complex(cosim_bus_real_power, 0));
+               fprintf('Wrapper: Sending complex power %d+%d to Cosim bus %d\n', cosim_bus_real_power, 0, cosim_bus);
+           end
        end
        
        
