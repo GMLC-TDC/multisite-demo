@@ -3,7 +3,7 @@
     "name": "distribution_2",
     "core_type": "zmq_ss",
     "log_level": "warning",
-    "broker_address": "10.81.10.102",
+    "broker_address": "10.81.10.101",
     "period": 1,
     "uninterruptible": false,
     "terminate_on_error": true,
