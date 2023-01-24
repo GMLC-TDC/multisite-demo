@@ -1,0 +1,6 @@
+Loading (p.u.),Name,Bus1,Bus2
+1.3528829706781536,Line.l(r:p4udm1-p4udt0lv),p4udt0lv.1.2,p4udm1.1.2
+1.352883149239232,Line.l(r:p4udm1-p4ulv29),p4udm1.1.2,p4ulv29.1.2
+1.464553387356729,Line.l(r:p4udt13lv-p4ulv15),p4udt13lv.1.2,p4ulv15.1.2
+2.6086686306414935,Line.l(r:p4udt25lv-p4ulv34),p4udt25lv.1.2,p4ulv34.1.2
+2.9754454229413567,Line.l(r:p4udt12lv-p4ulv14),p4udt12lv.1.2,p4ulv14.1.2

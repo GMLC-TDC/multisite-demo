@@ -1,0 +1,35 @@
+Clear
+
+New Circuit.substation_p4uhs0_69 bus1=p4uhs0_69 pu=1.0 basekV=69.0 R1=1e-05 X1=1e-05 R0=1e-05 X0=1e-05
+
+Redirect LineCodes.dss
+Redirect p4uhs0_4--p4udt0/LineCodes.dss
+Redirect p4uhs0_4--p4udt4/LineCodes.dss
+Redirect p4uhs0_4--p4udt6/LineCodes.dss
+Redirect Lines.dss
+Redirect p4uhs0_4--p4udt0/Lines.dss
+Redirect p4uhs0_4--p4udt4/Lines.dss
+Redirect p4uhs0_4--p4udt6/Lines.dss
+Redirect Transformers.dss
+Redirect p4uhs0_4--p4udt0/Transformers.dss
+Redirect p4uhs0_4--p4udt4/Transformers.dss
+Redirect p4uhs0_4--p4udt6/Transformers.dss
+Redirect Regulators.dss
+Redirect LoadShapes.dss
+Redirect p4uhs0_4--p4udt0/Loads.dss
+Redirect p4uhs0_4--p4udt4/Loads.dss
+Redirect p4uhs0_4--p4udt6/Loads.dss
+Redirect p4uhs0_4--p4udt4/Storage.dss
+Redirect p4uhs0_4--p4udt0/PVSystems.dss
+Redirect p4uhs0_4--p4udt4/PVSystems.dss
+Redirect p4uhs0_4--p4udt6/PVSystems.dss
+Redirect p4uhs0_4--p4uhs4/EV_ChargingStations.dss
+
+Set Voltagebases=[0.12, 0.208, 0.24, 0.48, 2.309, 4.0, 69.0]
+
+Calcvoltagebases
+
+Buscoords Buscoords.dss
+set maxcontroliter=50
+
+Solve mode=yearly stepsize=15m number=35040
