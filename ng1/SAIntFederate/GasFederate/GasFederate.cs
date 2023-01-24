@@ -13,9 +13,6 @@ namespace SAInt_GasFederate
 {
     class federate
     {
-        public static GasNet GNET { get; set; }
-        public static HubSystem HUB { get; set; }
-
         static object GetObject(string funcName)
         {
             var func = typeof(API).GetMethod(funcName, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
@@ -36,9 +33,6 @@ namespace SAInt_GasFederate
             API.openGNET(NetworkSourceFolder + NetFileName);
             API.openGSCE(NetworkSourceFolder + SceFileName);
             API.openGCON(NetworkSourceFolder + StateFileName);
-
-            GNET = (GasNet)GetObject("get_GNET");
-            HUB = (HubSystem)GetObject("get_HUBS");
 
 #if !DEBUG
             API.showSIMLOG(true);
@@ -62,7 +56,7 @@ namespace SAInt_GasFederate
 
             // GDEM.N15 coupled with transmission node.6
             // GDEM.N21 coupled with transmission node.8
-            foreach (GasDemand demand in GNET.GasDemands)
+            foreach (GasDemand demand in API.GNET.GasDemands)
             {
                 if(demand.Name =="N15" || demand.Name == "N21")
                 {
@@ -82,7 +76,7 @@ namespace SAInt_GasFederate
             Console.WriteLine($"Gas: Time period: {update_interval}");
 
             // set number of HELICS time steps based on scenario
-            double total_time = GNET.SCE.NN;
+            double total_time = API.GNET.SCE.NN;
             Console.WriteLine($"Gas: Number of time steps in the scenario: {total_time}");
 
             // set max iteration at 20
@@ -130,7 +124,7 @@ namespace SAInt_GasFederate
                     requested_time = granted_time + update_interval;
 
                     //Iterative HELICS time request
-                    Console.WriteLine($"\nGas Requested Time: {GNET.SCE.dTime[e.TimeStep]}, TimeStep: {e.TimeStep}");
+                    Console.WriteLine($"\nGas Requested Time: {API.GNET.SCE.dTime[e.TimeStep]}, TimeStep: {e.TimeStep}");
                     granted_time = h.helicsFederateRequestTime(vfed, requested_time);
                     Console.WriteLine($"Gas Granted Co-simulation Time Step: {granted_time}, SolverState: {e.SolverState}");
                     // Subscribe to requested active power generation
@@ -152,7 +146,7 @@ namespace SAInt_GasFederate
             API.runGSIM();
 
             // request time for end of time + 1: serves as a blocking call until all federates are complete
-            DateTime DateTimeRequested = GNET.SCE.EndTime.AddSeconds(GNET.SCE.dt);
+            DateTime DateTimeRequested = API.GNET.SCE.EndTime.AddSeconds(API.GNET.SCE.dt);
             Console.WriteLine($"\nGas Requested Time Step: {total_time + 1} at Time: {DateTimeRequested}");
             h.helicsFederateRequestTime(vfed, total_time + 1);
 

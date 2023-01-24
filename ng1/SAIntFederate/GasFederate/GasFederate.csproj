@@ -61,7 +61,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SAInt-Core">
+    <Reference Include="SAInt-Core, Version=3.2.7.0, Culture=neutral, PublicKeyToken=2f0816c0606388a4, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files\encoord\SAInt-v3-Alpha\SAInt-Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
