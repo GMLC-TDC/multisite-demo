@@ -1,6 +1,7 @@
 {
     "name": "transmission",
-    "core_type": "zmq",
+    "core_type": "zmq_ss",
+	"broker_address": "130.20.176.146",
     "log_level": "warning",
     "period": 1,
     "uninterruptible": false,
@@ -10,12 +11,12 @@
         {
             "key": "node.2.requested",
             "type": "double",
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "node.3.requested",
             "type": "double",
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "pcc.2.pnv",
@@ -25,12 +26,12 @@
         {
             "key": "node.6.requested",
             "type": "double",
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "node.8.requested",
             "type": "double",
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "pcc.9.pnv",
@@ -44,8 +45,7 @@
         },
         {
             "key": "pcc.13.lmp",
-            "type": "double",
-            "unit": "$/MWh"
+            "type": "JSON"
         },
         {
             "key": "pcc.14.pnv",
@@ -69,14 +69,14 @@
             "type": "double",
             "optional": true,
             "default": 1000,
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "ng2/node.3.avail",
             "type": "double",
             "default": 1000,
             "optional": true,
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "distribution1/pcc.2.pq",
@@ -90,14 +90,14 @@
             "type": "double",
             "default": 1000,
             "optional": true,
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "ng1/node.8.avail",
             "type": "double",
             "default": 1000,
             "optional": true,
-            "unit": "MMBtu"
+            "unit": "MW"
         },
         {
             "key": "distribution2/pcc.9.pq",

@@ -13,12 +13,6 @@ namespace SAInt_GasFederate
 {
     class federate
     {
-        static object GetObject(string funcName)
-        {
-            var func = typeof(API).GetMethod(funcName, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-            return func.Invoke(null, new object[] { });
-        }
-
         static void Main(string[] args)
         {
             string NetworkSourceFolder = @"..\..\..\..\Networks\Demo\";

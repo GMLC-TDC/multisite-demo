@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ng1",
-    "\\ng1\\SAIntFederate",
-    "\\ng1\\SAIntFederate\\GasFederate",
-    "\\ng1\\SAIntFederate\\SAIntHelicsAPI"
+    ""
   ],
-  "SelectedNode": "\\ng1\\SAIntFederate\\GasFederate\\SAInt_ng1_Config.json",
+  "SelectedNode": "\\SAIntFederate.sln",
   "PreviewInSolutionExplorer": false
 }

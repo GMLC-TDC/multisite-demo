@@ -1,5 +1,5 @@
 {
-    "coreType": "zmq",
+    "coreType": "zmq_ss",
     "name": "distribution3",
     "period": 1,
     "timeDelta": 0.0,
@@ -29,7 +29,7 @@
         {
             "required": false,
             "key": "transmission/pcc.13.lmp",
-            "type": "double"
+            "type": "JSON"
         }
     ]
 }

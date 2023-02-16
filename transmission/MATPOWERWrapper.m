@@ -82,11 +82,11 @@ classdef MATPOWERWrapper
            obj.profiles.(output_fieldname) = profiles;
        end 
         
-       %% Updating current Load from profiles in the Wrapper Clasess%% 
+       %% Updating current Load from profiles in the Wrapper Classes %% 
        function obj = update_loads_from_profiles(obj, time, profile_info_fieldname, profile_fieldname)
          
            profile = obj.profiles.(profile_fieldname);
-           profile_row = find(time==profile(:,1));
+           profile_row = find(abs(time - profile(:,1)) < 1e-5);
            
            profile_info = obj.config_data.matpower_most_data.(profile_info_fieldname);
            profile_info_col_idx = profile_info.data_map.columns;
@@ -150,8 +150,10 @@ classdef MATPOWERWrapper
            
            if isempty(obj.results.PF)
                obj.results.PF(1).VM = [time solution.bus(:, 8)'];
+               obj.results.PF(1).VA = [time solution.bus(:, 9)'];
            else
                obj.results.PF.VM = [obj.results.PF.VM; time solution.bus(:, 8)'];
+               obj.results.PF.VA = [obj.results.PF.VA; time solution.bus(:, 9)'];
            end       
        end
        
@@ -159,8 +161,8 @@ classdef MATPOWERWrapper
        function obj = run_RT_market(obj, time)
            
            %************* Wrapper.update_dispatchable_loads(bids)*************
-           for i = 1 : length(obj.config_data.cosimulation_bus)
-               Bus_number = obj.config_data.cosimulation_bus(i,1);
+           for i = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+               Bus_number = obj.config_data.real_time_market.cosimulation_bus(i,1);
                DSO_bid = obj.RT_bids{Bus_number};
                Actual_cost = zeros(length(DSO_bid.Q_bid),1);
                for k = 1:length(DSO_bid.Q_bid)
@@ -178,7 +180,7 @@ classdef MATPOWERWrapper
                kW_kVAR_factor = DSO_bid.constant_kW / DSO_bid.constant_kVAR;
                %***** Updating the responsive bus loads *****%
                Generator_index = size(obj.mpc.gen,1) + 1;
-               obj.mpc.genfuel(Generator_index,:) = obj.mpc.genfuel(1,:);  %copy random genfuel entry
+               % obj.mpc.genfuel(Generator_index,:) = obj.mpc.genfuel(1,:);  %copy random genfuel entry
                obj.mpc.gen(Generator_index,:) = 0;                             %new entry of 0's
                obj.mpc.gen(Generator_index,1) = Bus_number;                    %set bus # 
                obj.mpc.gen(Generator_index,5) = -1*max(DSO_bid.Q_bid)/kW_kVAR_factor; 
@@ -204,7 +206,7 @@ classdef MATPOWERWrapper
            end
             
            success = 0; tries = 0 ; 
-           while success < 1 || tries > 2
+           while success < 1 && tries < 2
                mpoptOPF = mpoption('verbose', 0, 'out.all', 0, 'model', obj.config_data.real_time_market.type);
                solution = rundcopf(obj.mpc, mpoptOPF); 
                success = solution.success;
@@ -216,17 +218,17 @@ classdef MATPOWERWrapper
            end
            
            %************* Wrapper.updating Allocations (bids)*************%
-           for i = 1 : length(obj.config_data.cosimulation_bus)
-               Bus_number = obj.config_data.cosimulation_bus(length(obj.config_data.cosimulation_bus)-i+1,1);
+           for i = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+               Bus_number = obj.config_data.real_time_market.cosimulation_bus(length(obj.config_data.real_time_market.cosimulation_bus)-i+1,1);
                Generator_index = size(obj.mpc.gen,1);
                solution.bus(Bus_number,3) = solution.bus(Bus_number,3) - solution.gen(Generator_index,2);
-               obj.RT_allocations{Bus_number}.P_clear =  obj.mpc.bus(Bus_number,14); 
-               obj.RT_allocations{Bus_number}.Q_clear =  obj.mpc.bus(Bus_number,3); 
+               obj.RT_allocations{Bus_number}.P_clear =  solution.bus(Bus_number,14); 
+               obj.RT_allocations{Bus_number}.Q_clear =  solution.bus(Bus_number,3); 
                
-               obj.mpc.genfuel(Generator_index,:) = [];
+               % obj.mpc.genfuel(Generator_index,:) = [];
                obj.mpc.gen(Generator_index,:) = [];
                obj.mpc.gencost(Generator_index,:) = [];
-               solution.genfuel(Generator_index,:) = [];
+               % solution.genfuel(Generator_index,:) = [];
                solution.gen(Generator_index,:) = [];
                solution.gencost(Generator_index,:) = [];
       
@@ -255,8 +257,8 @@ classdef MATPOWERWrapper
            obj.config_data.helics_config.publications = [];
            obj.config_data.helics_config.subscriptions = [];
 
-            for i = 1:length(obj.config_data.cosimulation_bus)
-                cosim_bus = obj.config_data.cosimulation_bus(i);
+            for i = 1:length(obj.config_data.physics_powerflow.cosimulation_bus)
+                cosim_bus = obj.config_data.physics_powerflow.cosimulation_bus(i);
                 %%%%%%%%%%%%%%%%% Creating Pubs & Subs for physics_powerflow %%%%%%%%%%%%%%%%%
                 if obj.config_data.include_physics_powerflow
                     publication.key =   strcat (obj.config_data.helics_config.name, '.pcc.', mat2str(cosim_bus), '.pnv');
@@ -269,7 +271,9 @@ classdef MATPOWERWrapper
                     subscription.required =   true;
                     obj.config_data.helics_config.subscriptions = [obj.config_data.helics_config.subscriptions subscription];
                 end
-                %%%%%%%%%%%%%%%%% Creating Pubs & Subs for real time market %%%%%%%%%%%%%%%%%%    
+            end
+                %%%%%%%%%%%%%%%%% Creating Pubs & Subs for real time market %%%%%%%%%%%%%%%%%% 
+            for i = 1:length(obj.config_data.real_time_market.cosimulation_bus)   
                 if obj.config_data.include_real_time_market
                     publication.key =   strcat (obj.config_data.helics_config.name, '.pcc.', mat2str(cosim_bus), '.rt_energy.cleared');
                     publication.type =   "JSON";
@@ -342,9 +346,9 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
-               cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.sub_keys, strcat('.pcc.', mat2str(cosim_bus), '.pq'));
+           for bus_idx = 1 : length(obj.config_data.physics_powerflow.cosimulation_bus)
+               cosim_bus = obj.config_data.physics_powerflow.cosimulation_bus(bus_idx);
+               temp = strfind(obj.helics_data.sub_keys, strcat('/pcc.', mat2str(cosim_bus), '.pq'));
                subkey_idx = find(~cellfun(@isempty,temp));
                sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
                demand = helicsInputGetComplex(sub_object);
@@ -365,13 +369,13 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
-               cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
+           for bus_idx = 1 : length(obj.config_data.physics_powerflow.cosimulation_bus)
+               cosim_bus = obj.config_data.physics_powerflow.cosimulation_bus(bus_idx);
                cosim_bus_voltage = obj.mpc.bus(cosim_bus, 8) * obj.mpc.bus(cosim_bus, 10);
-               cosim_bus_angle = obj.mpc.bus(cosim_bus, 9)*pi/180;
+               cosim_bus_angle = obj.mpc.bus(cosim_bus, 9) * pi/180;
                [voltage_real, voltage_imag] = pol2cart(cosim_bus_angle, cosim_bus_voltage);
                 
-               temp = strfind(obj.helics_data.pub_keys, strcat('.pcc.', mat2str(cosim_bus), '.pnv'));
+               temp = strfind(obj.helics_data.pub_keys, strcat('pcc.', mat2str(cosim_bus), '.pnv'));
                pubkey_idx = find(~cellfun(@isempty,temp));
                pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
                helicsPublicationPublishComplex(pub_object, complex(voltage_real, voltage_imag));
@@ -388,9 +392,9 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
-               cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.sub_keys, strcat('.pcc.', mat2str(cosim_bus), '.rt_energy.bid'));
+           for bus_idx = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+               cosim_bus = obj.config_data.real_time_market.cosimulation_bus(bus_idx);
+               temp = strfind(obj.helics_data.sub_keys, strcat('/pcc.', mat2str(cosim_bus), '.rt_energy.bid'));
                subkey_idx = find(~cellfun(@isempty,temp));
                sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
                raw_bid = helicsInputGetString(sub_object);
@@ -410,9 +414,9 @@ classdef MATPOWERWrapper
                import helics.*
            end
            
-           for bus_idx= 1 : length(obj.config_data.cosimulation_bus)
-               cosim_bus = obj.config_data.cosimulation_bus(bus_idx);
-               temp = strfind(obj.helics_data.pub_keys, strcat('.pcc.', mat2str(cosim_bus), '.rt_energy.cleared'));
+           for bus_idx = 1 : length(obj.config_data.real_time_market.cosimulation_bus)
+               cosim_bus = obj.config_data.real_time_market.cosimulation_bus(bus_idx);
+               temp = strfind(obj.helics_data.pub_keys, strcat('pcc.', mat2str(cosim_bus), '.lmp'));
                pubkey_idx = find(~cellfun(@isempty,temp));
                pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
                 
@@ -455,9 +459,9 @@ end
 function [required_profile, required_intervals] = interpolate_profile_to_powerflow_interval(input_data, input_data_resolution, required_resolution, duration)
   
             raw_data_duration  = (length(input_data)-1)*input_data_resolution;
-            raw_data_intervals = round(linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)');
-            required_intervals = round(linspace(0, duration, (duration/required_resolution)+1)');
-            if raw_data_intervals(1) <= required_intervals(1) && raw_data_intervals(end) >= required_intervals(end)
+            raw_data_intervals = linspace(0, raw_data_duration, (raw_data_duration/input_data_resolution)+1)';
+            required_intervals = linspace(0, duration, (duration/required_resolution)+1)';
+            if round(raw_data_intervals(1)) <= round(required_intervals(1)) && round(raw_data_intervals(end)) >= round(required_intervals(end))
                 interpolated_data = interp1 (raw_data_intervals, input_data, required_intervals, "spline");
                 %%    required_profile = [required_intervals interpolated_data];
                 required_profile = interpolated_data;
