@@ -46,7 +46,12 @@ namespace SAInt_GasFederate
             // Create value federate
             Console.WriteLine("Gas: Creating Value Federate");
             //SWIGTYPE_p_void vfed = h.helicsCreateValueFederate("Gas Federate", fedinfo);
+
+            Console.WriteLine("Reading HELICS configuration");
+
             SWIGTYPE_p_void vfed = h.helicsCreateCombinationFederateFromConfig(@"..\..\..\..\GasFederate\SAInt_ng1_Config.json");
+            Console.WriteLine("Finished HELICS configuration");
+
             Console.WriteLine("Gas: Value federate created");
 
             //Identify the gas nodes that are coupled
@@ -72,7 +77,12 @@ namespace SAInt_GasFederate
             h.helicsFederateSetTimeProperty(vfed, (int)HelicsProperties.HELICS_PROPERTY_TIME_PERIOD, period);
 
             // check to make sure setting the time property worked
-            double update_interval = h.helicsFederateGetTimeProperty(vfed, (int)HelicsProperties.HELICS_PROPERTY_TIME_PERIOD);
+            //double update_interval = h.helicsFederateGetTimeProperty(vfed, (int)HelicsProperties.HELICS_PROPERTY_TIME_PERIOD);
+
+            // set up interval to 900 seconds (15 min) or 3600 (1 hour)
+            // double update_interval = 900;
+            double update_interval = 3600;
+
             Console.WriteLine($"Gas: Time period: {update_interval}");
 
             // set number of HELICS time steps based on scenario
@@ -156,8 +166,10 @@ namespace SAInt_GasFederate
             writer.Close();
             ostrm.Close();
 #endif
+            //API.writeGSOL(NetworkSourceFolder + SolDescFileName, OutputFolder + $"gsolout_HELICS - {DateTimeRequested}.xlsx");
             API.writeGSOL(NetworkSourceFolder + SolDescFileName, OutputFolder + "gsolout_HELICS.xlsx");
-            
+
+            //API.exportGSCE(OutputFolder + $"GasScenarioEventsGSCE - {DateTimeRequested}.xlsx");
             API.exportGSCE(OutputFolder + "GasScenarioEventsGSCE.xlsx");
 
             // finalize federate

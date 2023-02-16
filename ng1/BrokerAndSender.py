@@ -4,8 +4,12 @@ import time
 import struct
 import math
 
-initstring = "-f 2 --name=mainbroker"
-broker = h.helicsCreateBroker("tcp", "", initstring)
+# helics_broker --broker_address=54.67.2.187 --localinterface=127.0.0.1 -f 1 --loglevel=trace -t zmq_ss
+
+print("HELICS version=" + str(h.helicsGetVersion()))
+
+initstring = "-f 2 --name=mainbroker --loglevel=trace"
+broker = h.helicsCreateBroker("zmq_ss", "", initstring)
 
 fed = h.helicsCreateCombinationFederateFromConfig("Sender.json")
 # start initialization mode

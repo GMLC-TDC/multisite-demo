@@ -1,8 +1,7 @@
 {
-  "coreInit": "--federates=1",
   "name": "ng1",
-  "core_type": "zmq",
-  "log_level": "warning",
+  "core_type": "zmqss",
+  "log_level": "trace",
   "period": 1,
   "uninterruptible": false,
   "terminate_on_error": true,
