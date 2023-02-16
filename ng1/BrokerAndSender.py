@@ -4,8 +4,12 @@ import time
 import struct
 import math
 
-initstring = "-f 2 --name=mainbroker"
-broker = h.helicsCreateBroker("zmq", "", initstring)
+# helics_broker --broker_address=54.67.2.187 --localinterface=127.0.0.1 -f 1 --loglevel=trace -t zmq_ss
+
+print("HELICS version=" + str(h.helicsGetVersion()))
+
+initstring = "-f 2 --name=mainbroker --loglevel=trace"
+broker = h.helicsCreateBroker("zmq_ss", "", initstring)
 
 fed = h.helicsCreateCombinationFederateFromConfig("Sender.json")
 # start initialization mode
@@ -18,7 +22,7 @@ print(fed.subscriptions.keys())
 
 h.helicsFederateEnterExecutingMode(fed)
 
-for request_time in range(1, 10):
+for request_time in range(1, 97):
     h.helicsFederateRequestTime(fed, request_time)
     fed.publications["transmission/node.6.requested"].publish(request_time*math.pi)
     fed.publications["transmission/node.8.requested"].publish(2*request_time*math.pi)

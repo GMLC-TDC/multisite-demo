@@ -1,33 +1,33 @@
 {
-    "name": "transmission",
-    "core_type": "zmq",
-    "log_level": "warning",
-    "period": 1,
-    "uninterruptible": false,
-    "terminate_on_error": true,
-    "strict_input_type_checking": true,
-    "publications": [
-        {
-            "key": "node.6.requested",
-            "type": "double",
-            "unit": "MW"
-        },
-        {
-            "key": "node.8.requested",
-            "type": "double",
-            "unit": "MW"
-        }
-    ],
-    "subscriptions": [
-        {
-            "key": "ng1/node.6.avail",
-            "type": "double",
-            "unit": "MW"
-        },
-        {
-            "key": "ng1/node.8.avail",
-            "type": "double",
-            "unit": "MW"
-        }
-    ]
+  "name": "transmission",
+  "core_type": "zmq_ss",
+  "log_level": "warning",
+  "period": 1,
+  "uninterruptible": false,
+  "terminate_on_error": true,
+  "strict_input_type_checking": true,
+  "publications": [
+    {
+      "key": "node.6.requested",
+      "type": "double",
+      "unit": "MW"
+    },
+    {
+      "key": "node.8.requested",
+      "type": "double",
+      "unit": "MW"
+    }
+  ],
+  "subscriptions": [
+    {
+      "key": "ng1/node.6.avail",
+      "type": "double",
+      "unit": "MW"
+    },
+    {
+      "key": "ng1/node.8.avail",
+      "type": "double",
+      "unit": "MW"
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "ng1",
+  "core_type": "zmqss",
+  "log_level": "trace",
+  "period": 1,
+  "uninterruptible": false,
+  "terminate_on_error": true,
+  "strict_input_type_checking": true,  
+}
