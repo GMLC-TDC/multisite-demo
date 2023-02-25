@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "core_type": "zmq_ss",
-	"broker_address": "130.20.176.146",
+	"broker_address": "0.0.0.0",
     "log_level": "warning",
     "period": 1,
     "uninterruptible": false,
@@ -68,13 +68,13 @@
             "key": "ng2/node.2.avail",
             "type": "double",
             "optional": true,
-            "default": 1000,
+            "default": 30,
             "unit": "MW"
         },
         {
             "key": "ng2/node.3.avail",
             "type": "double",
-            "default": 1000,
+            "default": 30,
             "optional": true,
             "unit": "MW"
         },
@@ -88,14 +88,14 @@
         {
             "key": "ng1/node.6.avail",
             "type": "double",
-            "default": 1000,
+            "default": 30,
             "optional": true,
             "unit": "MW"
         },
         {
             "key": "ng1/node.8.avail",
             "type": "double",
-            "default": 1000,
+            "default": 30,
             "optional": true,
             "unit": "MW"
         },
