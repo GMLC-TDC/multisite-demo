@@ -459,10 +459,11 @@ classdef MATPOWERWrapper
                temp = strfind(obj.helics_data.sub_keys, strcat('/node.', mat2str(cosim_bus), '.avail'));
                subkey_idx = find(~cellfun(@isempty,temp));
                sub_object = helicsFederateGetSubscription(obj.helics_data.fed, obj.helics_data.sub_keys{subkey_idx});
-               generation = helicsInputGetComplex(sub_object);
-               fprintf('Wrapper: Got Load %d+%d from Cosim bus %d\n', real(generation), 0, cosim_bus);
+               generation = helicsInputGetDouble(sub_object);
+               fprintf('Wrapper: Got Generation %d from Cosim bus %d\n', generation, cosim_bus);
                 
-               obj.mpc.bus(cosim_bus, 3) = real(generation);
+               %obj.mpc.bus(cosim_bus, 3) = generation;
+               obj.mpc.gen(cosim_bus, 2) = generation;
            end 
     
        end
@@ -483,8 +484,8 @@ classdef MATPOWERWrapper
                temp = strfind(obj.helics_data.pub_keys, strcat('node.', mat2str(cosim_bus), '.requested'));
                pubkey_idx = find(~cellfun(@isempty,temp));
                pub_object = helicsFederateGetPublication(obj.helics_data.fed, obj.helics_data.pub_keys{pubkey_idx});
-               helicsPublicationPublishComplex(pub_object, complex(cosim_bus_real_power, 0));
-               fprintf('Wrapper: Sending complex power %d+%d to Cosim bus %d\n', cosim_bus_real_power, 0, cosim_bus);
+               helicsPublicationPublishDouble(pub_object, cosim_bus_real_power);
+               fprintf('Wrapper: Sending real power %d to Cosim bus %d\n', cosim_bus_real_power, cosim_bus);
            end
        end
        
