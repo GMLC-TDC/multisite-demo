@@ -9,8 +9,6 @@ clc
 %% Check if MATLAB or OCTAVE.
 isOctave = exist('OCTAVE_VERSION', 'builtin') ~= 0;
 
-disp('Test!')
-
 %% Load Model
 % FIXME: Each user must use an appropriate file below that
 % contains appropriate paths to matHELICS and any other
@@ -32,7 +30,6 @@ if Wrapper.config_data.include_helics
     Wrapper = Wrapper.start_helics_federate('transmission_config.json');
 end
 
-disp('Test!')
 tnext_physics_powerflow = Wrapper.config_data.physics_powerflow.interval;
 tnext_real_time_market = Wrapper.config_data.real_time_market.interval;
 tnext_day_ahead_market = Wrapper.config_data.day_ahead_market.interval;
@@ -46,7 +43,6 @@ price_range = [10, 30];
 flexibility = 0.25;
 blocks = 10;
 
-disp('Test!')
 while time_granted <= Wrapper.duration
     next_helics_time =  min([tnext_physics_powerflow, tnext_real_time_market, tnext_day_ahead_market]);
     
@@ -58,7 +54,7 @@ while time_granted <= Wrapper.duration
         fprintf('Wrapper: Current Time %d\n.', time_granted)
     end
 
-   if (time_granted >= tnext_real_time_market) && (Wrapper.config_data.include_real_time_market)
+    if (time_granted >= tnext_real_time_market) && (Wrapper.config_data.include_real_time_market)
             time_granted;
             Wrapper = Wrapper.update_loads_from_profiles(time_granted, 'load_profile_info', 'load_profile');
             
@@ -79,10 +75,6 @@ while time_granted <= Wrapper.duration
                 Wrapper = Wrapper.send_allocations_to_helics();
             end
             
-            if (Wrapper.config_data.include_helics) && (Wrapper.config_data.include_natural_gas)
-                Wrapper = Wrapper.send_requests_to_natural_gas_generators();
-            end
-            
             tnext_real_time_market = tnext_real_time_market + Wrapper.config_data.real_time_market.interval;
     end
     
@@ -93,9 +85,6 @@ while time_granted <= Wrapper.duration
              if Wrapper.config_data.include_helics  
                  Wrapper = Wrapper.get_loads_from_helics();
                  % FIXME: Add code for other dummy federates: Start
-                 if (Wrapper.config_data.include_helics) && (Wrapper.config_data.include_natural_gas)
-                     Wrapper = Wrapper.get_generation_from_natural_gas_generators();
-                 end
                  % FIXME: Add code for other dummy federates: End                 
              end
              %*************************************************************
